@@ -1,6 +1,4 @@
-using System.Numerics;
 using System.Threading.Tasks;
-using Content.Shared._CE.GOAP;
 using Content.Shared._CE.Procedural;
 using Content.Shared.Maps;
 using Content.Shared.Whitelist;
@@ -47,7 +45,7 @@ public sealed partial class CEBudgetSpawnPostProcess : CEDungeonPostProcessLayer
     /// will not be considered as candidates.
     /// </summary>
     [DataField]
-    public List<CEProceduralRoomType> ExcludedRoomTypes = new();
+    public List<ProtoId<CERoomTypePrototype>> ExcludedRoomTypes = new();
 
     /// <summary>
     /// If true, only spawn on the main z-level (as defined by the dungeon level prototype).
@@ -239,7 +237,7 @@ public sealed partial class CEBudgetSpawnPostProcess : CEDungeonPostProcessLayer
 
         foreach (var room in dungeon.Rooms)
         {
-            if (ExcludedRoomTypes.Contains(room.RoomType))
+            if (room.RoomType != null && ExcludedRoomTypes.Contains(room.RoomType.Value))
                 zones.Add((room.Position, room.Size));
         }
 

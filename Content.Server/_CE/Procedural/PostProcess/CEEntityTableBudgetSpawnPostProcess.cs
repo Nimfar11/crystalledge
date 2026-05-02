@@ -1,6 +1,4 @@
-using System.Numerics;
 using System.Threading.Tasks;
-using Content.Shared._CE.GOAP;
 using Content.Shared._CE.Procedural;
 using Content.Shared.EntityTable;
 using Content.Shared.EntityTable.EntitySelectors;
@@ -49,7 +47,7 @@ public sealed partial class CEEntityTableBudgetSpawnPostProcess : CEDungeonPostP
     /// will not be considered as candidates.
     /// </summary>
     [DataField]
-    public List<CEProceduralRoomType> ExcludedRoomTypes = new();
+    public List<ProtoId<CERoomTypePrototype>> ExcludedRoomTypes = new();
 
     /// <summary>
     /// If true, only spawn on the main z-level (as defined by the dungeon level prototype).
@@ -73,7 +71,9 @@ public sealed partial class CEEntityTableBudgetSpawnPostProcess : CEDungeonPostP
 
         var totalWeight = 0f;
         foreach (var entry in Entries)
+        {
             totalWeight += entry.Weight;
+        }
 
         if (totalWeight <= 0 || Entries.Count == 0)
             return;
@@ -239,7 +239,7 @@ public sealed partial class CEEntityTableBudgetSpawnPostProcess : CEDungeonPostP
 
         foreach (var room in dungeon.Rooms)
         {
-            if (ExcludedRoomTypes.Contains(room.RoomType))
+            if (room.RoomType != null && ExcludedRoomTypes.Contains(room.RoomType.Value))
                 zones.Add((room.Position, room.Size));
         }
 

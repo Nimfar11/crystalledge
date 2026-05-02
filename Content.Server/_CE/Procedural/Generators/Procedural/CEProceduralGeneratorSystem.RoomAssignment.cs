@@ -1,12 +1,12 @@
 using System.Threading.Tasks;
-using Content.Server._CE.Procedural.Prototypes;
 using Content.Shared._CE.Procedural;
-using Robust.Shared.Random;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server._CE.Procedural.Generators.Procedural;
 
 /// <summary>
-/// Partial: room type assignment, special room graph expansion, and real prototype selection.
+/// Partial: real prototype assignment — maps each abstract room to a concrete
+/// <see cref="CEDungeonRoom3DPrototype"/>, applies rotation and centres the room in its grid cell.
 /// </summary>
 public sealed partial class CEProceduralGeneratorSystem
 {
@@ -42,9 +42,6 @@ public sealed partial class CEProceduralGeneratorSystem
 
             var room = comp.Rooms[i];
 
-            // Pick the whitelist based on the room's assigned type.
-            var roomTypeProto = GetRoomTypeProto(config, room.RoomType);
-
             // Determine required exit directions for this room.
             var required = requiredExits.GetValueOrDefault(room.Index) ?? new HashSet<Direction>();
 
@@ -58,8 +55,8 @@ public sealed partial class CEProceduralGeneratorSystem
             {
                 var candidate = _dungeon.GetRoomPrototype(
                     random,
-                    roomTypeProto?.Whitelist,
-                    maxSize: maxSizeVec);
+                    maxSize: maxSizeVec,
+                    roomType: room.RoomType);
 
                 if (candidate == null)
                     break;
@@ -68,7 +65,7 @@ public sealed partial class CEProceduralGeneratorSystem
                 if (required.Count == 0)
                 {
                     roomProto = candidate;
-                    chosenRotation = _dungeon.GetRoomRotation(candidate, random);
+                    chosenRotation = random.Next(4) * Math.PI / 2;
                     found = true;
                     break;
                 }
@@ -141,7 +138,9 @@ public sealed partial class CEProceduralGeneratorSystem
         // Index rooms by their index for GridCoord lookup.
         var roomByIndex = new Dictionary<int, CEProceduralAbstractRoom>();
         foreach (var room in comp.Rooms)
+        {
             roomByIndex[room.Index] = room;
+        }
 
         var result = new Dictionary<int, HashSet<Direction>>();
 
@@ -191,161 +190,5 @@ public sealed partial class CEProceduralGeneratorSystem
             { Y: < 0 } => Direction.South,
             _ => Direction.Invalid,
         };
-    }
-
-    /// <summary>
-    /// Returns the <see cref="CERoomTypePrototype"/> for the given room type, or <c>null</c> if none is configured.
-    /// </summary>
-    private CERoomTypePrototype? GetRoomTypeProto(CEProceduralConfig config, CEProceduralRoomType type)
-    {
-        var protoId = type switch
-        {
-            CEProceduralRoomType.Exit => config.ExitRoom,
-            CEProceduralRoomType.Entrance => config.EntranceRooms,
-            CEProceduralRoomType.Blessing => config.BlessingRooms,
-            CEProceduralRoomType.Treasure => config.TreasureRooms,
-            CEProceduralRoomType.DeadEnd => config.DeadEndRooms,
-            _ => config.GeneralRooms,
-        };
-
-        if (protoId == null)
-            return null;
-
-        _proto.TryIndex(protoId.Value, out var proto);
-        return proto;
-    }
-
-    /// <summary>
-    /// Marks the room at grid (0,0) as <see cref="CEProceduralRoomType.Exit"/>.
-    /// Call this before <see cref="AppendSpecialRooms"/> so that corridor rooms are still
-    /// <see cref="CEProceduralRoomType.General"/> and available as parents for special rooms.
-    /// </summary>
-    internal void AssignExitRoom(CEGeneratingProceduralDungeonComponent comp)
-    {
-        foreach (var room in comp.Rooms)
-        {
-            if (room.GridCoord == Vector2i.Zero)
-            {
-                room.RoomType = CEProceduralRoomType.Exit;
-                break;
-            }
-        }
-    }
-
-    /// <summary>
-    /// Marks all <see cref="CEProceduralRoomType.General"/> rooms that have exactly one
-    /// connection as <see cref="CEProceduralRoomType.DeadEnd"/>.
-    /// Call this <em>after</em> <see cref="AppendSpecialRooms"/> so that special rooms
-    /// are attached to corridors first, and only the truly unassigned leaf rooms become
-    /// dead-ends.
-    /// </summary>
-    internal void AssignDeadEnds(CEGeneratingProceduralDungeonComponent comp)
-    {
-        // Count connections per room.
-        var connectionCount = new Dictionary<int, int>();
-        foreach (var conn in comp.Connections)
-        {
-            connectionCount[conn.RoomA] = connectionCount.GetValueOrDefault(conn.RoomA) + 1;
-            connectionCount[conn.RoomB] = connectionCount.GetValueOrDefault(conn.RoomB) + 1;
-        }
-
-        foreach (var room in comp.Rooms)
-        {
-            if (room.RoomType != CEProceduralRoomType.General)
-                continue;
-
-            if (connectionCount.GetValueOrDefault(room.Index) == 1)
-                room.RoomType = CEProceduralRoomType.DeadEnd;
-        }
-    }
-
-    /// <summary>
-    /// Appends <paramref name="count"/> new rooms of the given <paramref name="type"/> to
-    /// the dungeon graph, each attached to a random <see cref="CEProceduralRoomType.General"/>
-    /// (corridor) room that still has at least one free cardinal grid cell.
-    /// <para>
-    /// Call this <em>before</em> <see cref="AssignDeadEnds"/> so that corridor rooms are
-    /// still <see cref="CEProceduralRoomType.General"/> and available as parents.
-    /// </para>
-    /// </summary>
-    internal void AppendSpecialRooms(
-        CEGeneratingProceduralDungeonComponent comp,
-        int count,
-        CEProceduralRoomType type,
-        int maxRoomSize)
-    {
-        if (count <= 0)
-            return;
-
-        var step = maxRoomSize + 1;
-        var roomSize = new Vector2i(maxRoomSize, maxRoomSize);
-
-        // Build the current occupied grid coordinate set.
-        var occupied = new HashSet<Vector2i>();
-        foreach (var room in comp.Rooms)
-            occupied.Add(room.GridCoord);
-
-        // Candidate parents: General corridor rooms with at least one free cardinal neighbor.
-        var candidates = new List<CEProceduralAbstractRoom>();
-        foreach (var room in comp.Rooms)
-        {
-            if (room.RoomType != CEProceduralRoomType.General)
-                continue;
-
-            if (HasEmptyNeighbor(room.GridCoord, occupied))
-                candidates.Add(room);
-        }
-
-        // Shuffle so we distribute across the dungeon.
-        for (var i = candidates.Count - 1; i > 0; i--)
-        {
-            var j = _random.Next(i + 1);
-            (candidates[i], candidates[j]) = (candidates[j], candidates[i]);
-        }
-
-        var added = 0;
-        foreach (var parent in candidates)
-        {
-            if (added >= count)
-                break;
-
-            // Collect free cardinal neighbors at this point in time (prior iterations may have filled some).
-            var freeNeighbors = new List<Vector2i>();
-            foreach (var dir in Directions)
-            {
-                var neighbor = parent.GridCoord + dir;
-                if (!occupied.Contains(neighbor))
-                    freeNeighbors.Add(neighbor);
-            }
-
-            if (freeNeighbors.Count == 0)
-                continue;
-
-            var chosenCoord = _random.Pick(freeNeighbors);
-
-            var newRoom = new CEProceduralAbstractRoom
-            {
-                Index = comp.Rooms.Count,
-                GridCoord = chosenCoord,
-                Position = new Vector2i(chosenCoord.X * step, chosenCoord.Y * step),
-                Size = roomSize,
-                RoomType = type,
-            };
-
-            comp.Rooms.Add(newRoom);
-            comp.Connections.Add(new CEProceduralRoomConnection
-            {
-                RoomA = parent.Index,
-                RoomB = newRoom.Index,
-            });
-
-            occupied.Add(chosenCoord);
-            added++;
-        }
-
-        if (added < count)
-        {
-            Log.Warning($"CEProceduralGeneratorSystem: could only append {added}/{count} rooms of type {type} — dungeon grid is too crowded.");
-        }
     }
 }

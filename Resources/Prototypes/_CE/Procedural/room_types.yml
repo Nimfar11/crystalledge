@@ -1,53 +1,44 @@
-# Room type prototypes for the Mossy Temple dungeon.
-# Each prototype defines the room whitelist, wide-connection support and
-# the door variant placed at corridor endpoints that lead into this room type.
-
 - type: dungeonRoomType
   id: MossyTempleGeneralRoom
-  whitelist:
-    requireAll: true
-    tags:
-    - CEDunGenMossyTemple
-    - CEDunGenRoomGeneral
+  supportsWideConnection: true
+  color: "#CCCCCC"
 
 - type: dungeonRoomType
   id: MossyTempleExitRoom
-  whitelist:
-    requireAll: true
-    tags:
-    - CEDunGenMossyTemple
-    - CEDunGenRoomExit
+  supportsWideConnection: true
+  color: "#5f2f89"
+  minimapIcon:
+    sprite: /Textures/_CE/Interface/minimap_icons.rsi
+    state: exit
 
 - type: dungeonRoomType
   id: MossyTempleEntranceRoom
-  whitelist:
-    requireAll: true
-    tags:
-    - CEDunGenMossyTemple
-    - CEDunGenRoomEntrance
+  supportsWideConnection: true
+  secretRoom: true #Intended
+  color: "#4b944b"
+  minimapIcon:
+    sprite: /Textures/_CE/Interface/minimap_icons.rsi
+    state: enter
 
 - type: dungeonRoomType
   id: MossyTempleBlessingRoom
-  whitelist:
-    requireAll: true
-    tags:
-    - CEDunGenMossyTemple
-    - CEDunGenRoomBlessing
+  supportsWideConnection: true
+  color: "#6495ED"
+  minimapIcon:
+    sprite: /Textures/_CE/Interface/minimap_icons.rsi
+    state: blessing
 
 - type: dungeonRoomType
   id: MossyTempleTreasureRoom
   doorPrototype: CEGoldenLockedDoor
   supportsWideConnection: false
-  whitelist:
-    requireAll: true
-    tags:
-    - CEDunGenMossyTemple
-    - CEDunGenRoomTreasure
+  showIconFromNeighbour: true
+  color: "#FFD700"
+  minimapIcon:
+    sprite: /Textures/_CE/Interface/minimap_icons.rsi
+    state: treasure
 
 - type: dungeonRoomType
   id: MossyTempleDeadEndRoom
-  whitelist:
-    requireAll: true
-    tags:
-    - CEDunGenMossyTemple
-    - CEDunGenRoomDeadEnd
+  supportsWideConnection: true
+  color: "#c0a87b"
