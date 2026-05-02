@@ -49,6 +49,7 @@
   - type: CETileEffectTransform
     transforms:
       CETileEffectFire: CEWaterPoisoned
+      CETileEffectCursedFire: CEWaterPoisoned
 
 - type: entity
   parent: CEIcePoisoned
@@ -59,3 +60,4 @@
   - type: CETileEffectTransform
     transforms:
       CETileEffectFire: CEWaterPoisonedMoving
+      CETileEffectCursedFire: CEWaterPoisonedMoving

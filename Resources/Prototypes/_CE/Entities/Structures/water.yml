@@ -132,6 +132,7 @@
   - type: CETileEffectTransform
     transforms:
       CETileEffectFire: CEWater
+      CETileEffectCursedFire: CEWater
 
 - type: entity
   parent: CEIce
@@ -142,4 +143,5 @@
   - type: CETileEffectTransform
     transforms:
       CETileEffectFire: CEWaterMoving
+      CETileEffectCursedFire: CEWaterMoving
 
