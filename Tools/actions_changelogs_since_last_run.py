@@ -210,26 +210,59 @@ def changelog_entries_to_message_lines(entries: Iterable[ChangelogEntry]) -> lis
 
 def send_message_lines(message_lines: list[str]):
     print("[DEBUG] Splitting message lines into chunks")
+    print(f"[DEBUG] Total incoming lines: {len(message_lines)}")
+    print(f"[DEBUG] DISCORD_SPLIT_LIMIT = {DISCORD_SPLIT_LIMIT}")
+
     chunk_lines = []
     chunk_length = 0
 
+    print(f"[DEBUG] chunk_lines = {chunk_lines}")
+    print(f"[DEBUG] chunk_length = {chunk_length}")
+
     for line in message_lines:
+        print("\n[DEBUG] ---- Processing new line ----")
+        print(f"[DEBUG] Line index: {idx}")
+        print(f"[DEBUG] Line content: {repr(line)}")
+
         line_length = len(line)
         new_chunk_length = chunk_length + line_length
 
+        print(f"[DEBUG] Current chunk_length = {chunk_length}")
+        print(f"[DEBUG] new_chunk_length (after adding line) = {new_chunk_length}")
+
         if new_chunk_length > DISCORD_SPLIT_LIMIT:
-            print("[DEBUG] Chunk size limit reached, sending chunk")
+            print("[DEBUG] !!! Chunk limit will be exceeded !!!")
+            print(f"[DEBUG] chunk_length ({chunk_length}) + line_length ({line_length}) > limit ({DISCORD_SPLIT_LIMIT})")
+            print(f"[DEBUG] Sending current chunk with {len(chunk_lines)} lines")
+            print(f"[DEBUG] Chunk content preview: {chunk_lines}")
+            
             send_discord_webhook(chunk_lines)
+
+            print("[DEBUG] Chunk sent successfully")
+            print("[DEBUG] Resetting chunk buffer")
 
             new_chunk_length = line_length
             chunk_lines.clear()
 
+            print(f"[DEBUG] chunk_lines cleared -> {chunk_lines}")
+            print(f"[DEBUG] chunk_length reset candidate = {new_chunk_length}")
+
+        print("[DEBUG] Appending line to current chunk")
         chunk_lines.append(line)
         chunk_length = new_chunk_length
 
+        print(f"[DEBUG] chunk_lines size now = {len(chunk_lines)}")
+        print(f"[DEBUG] chunk_length updated = {chunk_length}")
+
+    print("\n[DEBUG] Finished iterating over lines")
+
     if chunk_lines:
-        print("[DEBUG] Sending final chunk to Discord")
+        print("[DEBUG] Remaining lines detected, sending final chunk")
+        print(f"[DEBUG] Final chunk size (lines) = {len(chunk_lines)}")
+        print(f"[DEBUG] Final chunk_length = {chunk_length}")
+        print(f"[DEBUG] Final chunk preview: {chunk_lines}")
         send_discord_webhook(chunk_lines)
+        print("[DEBUG] Final chunk sent")
 
 
 if __name__ == "__main__":
