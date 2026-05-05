@@ -33,3 +33,14 @@
   id: 10006
   time: '2026-05-05T12:25:49.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystalledge/pull/213
+- author: TheShuEd
+  changes:
+  - message: The standard wait time in the lobby has been increased from 5 minutes
+      to 5 hours. The admins are tired of shutting down the server after every update.
+      The admins can still hold impromptu closed beta tests in the middle of the day.
+    type: Fix
+  - message: Fixed small mana potions restore 5 mana instead 25.
+    type: Fix
+  id: 10007
+  time: '2026-05-05T14:41:34.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystalledge/pull/214
