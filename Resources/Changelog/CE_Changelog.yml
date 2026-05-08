@@ -133,3 +133,26 @@
   id: 10014
   time: '2026-05-08T10:08:54.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystalledge/pull/224
+- author: TheShuEd
+  changes:
+  - message: "The neutral abilities \u201CFire Barrier\u201D and \u201CIce Barrier\u201D\
+      \ have been removed."
+    type: Remove
+  - message: The Ice Protection and Fire Protection potions have been removed.
+    type: Remove
+  - message: Fixed ice spikes dealing damage in PvE.
+    type: Fix
+  - message: The mechanics of temporary shields now block all types of damage except
+      poison.
+    type: Tweak
+  - message: PvE no longer blocks damage that a player can inflict on themselves
+    type: Tweak
+  - message: All types of magic staffs now have a limited number of charges. Ranged
+      combat is no longer an endless safe option.
+    type: Tweak
+  - message: The alternative attacks of simple magic staffs are converted into a standard
+      physical attack that can be used when you run out of charges.
+    type: Tweak
+  id: 10015
+  time: '2026-05-08T12:06:02.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystalledge/pull/225
