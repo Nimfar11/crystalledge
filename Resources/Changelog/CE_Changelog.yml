@@ -304,3 +304,21 @@
   id: 10022
   time: '2026-05-13T14:04:48.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystalledge/pull/235
+- author: TheShuEd
+  changes:
+  - message: Added minimap to ghosts
+    type: Add
+  - message: Reverted one-way passages for starting rooms due to the risk of soft-locking
+      through the warrior's stone wall
+    type: Remove
+  - message: Reverted Apostasy's double damage. It turns out that 100 points of unavoidable
+      damage from a single cast kills players very quickly. >:D
+    type: Tweak
+  - message: 'Warrior spells that grant barriers have been nerfed: A cap has been
+      added to the maximum armor gained.'
+    type: Tweak
+  - message: Fixed a bug that caused accessories to work in pockets
+    type: Fix
+  id: 10023
+  time: '2026-05-13T18:18:54.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystalledge/pull/236
