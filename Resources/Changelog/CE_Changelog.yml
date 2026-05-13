@@ -288,3 +288,19 @@
   id: 10021
   time: '2026-05-13T09:52:50.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystalledge/pull/234
+- author: TheShuEd
+  changes:
+  - message: 3 new accessories have been added. "Crown of thorns" "Energy geode" and
+      "Ninja bandana"
+    type: Add
+  - message: Removed neutral passive skill "Open hearted"
+    type: Remove
+  - message: "Fixed a bug that prevented the effects of multiple \u201CFlame Stone\u201D\
+      \ accessories from stacking."
+    type: Fix
+  - message: Apostasy once again doubles damage dealt, due to the increased mana cost
+      of healing spells.
+    type: Tweak
+  id: 10022
+  time: '2026-05-13T14:04:48.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystalledge/pull/235
