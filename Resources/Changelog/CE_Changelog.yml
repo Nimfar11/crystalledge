@@ -267,3 +267,24 @@
   id: 10020
   time: '2026-05-12T21:06:40.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystalledge/pull/233
+- author: TheShuEd
+  changes:
+  - message: The item charges system has been removed.
+    type: Remove
+  - message: "The mage's \u201CRecharge\u201D active ability, which restores item\
+      \ charges, has been removed."
+    type: Remove
+  - message: Magic staffs now store magical energy within them. Using the staffs consumes
+      this internal energy.
+    type: Tweak
+  - message: Alternative attacks with simple magic staffs now consume energy. Regular
+      attacks are free.
+    type: Tweak
+  - message: "The mage's active spells \u201CMana Steal\u201D and \u201CMana Gift\u201D\
+      \ can now interact with magical items, charging and discharging them."
+    type: Add
+  - message: Fixed a bug that caused gnomes to have low mana for self-healing
+    type: Fix
+  id: 10021
+  time: '2026-05-13T09:52:50.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystalledge/pull/234
