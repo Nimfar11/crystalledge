@@ -1,10 +1,11 @@
-using Content.Shared._CE.GOAP;
+using Content.Shared._CE.GOAP.Components;
 using Content.Shared.Actions;
 using Content.Shared.Actions.Components;
 using Content.Shared.Actions.Events;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Timing;
 
-namespace Content.Server._CE.GOAP.Actions;
+namespace Content.Shared._CE.GOAP.Actions;
 
 /// <summary>
 /// Triggers action (Instant, EntityTarget, or WorldTarget).
@@ -22,6 +23,7 @@ public sealed partial class CEGOAPUseAction : CEGOAPActionBase<CEGOAPUseAction>
 public sealed partial class CEGOAPUseActionSystem : CEGOAPActionSystem<CEGOAPUseAction>
 {
     [Dependency] private readonly SharedActionsSystem _actions = default!;
+    [Dependency] private readonly IGameTiming _timing = default!;
 
     private EntityQuery<EntityTargetActionComponent> _entityTargetQuery;
     private EntityQuery<WorldTargetActionComponent> _worldTargetQuery;
@@ -67,7 +69,6 @@ public sealed partial class CEGOAPUseActionSystem : CEGOAPActionSystem<CEGOAPUse
             return;
         }
 
-        // On cooldown — can't use
         if (_actions.IsCooldownActive(actionComp))
             args.CanExecute = false;
     }
@@ -76,6 +77,9 @@ public sealed partial class CEGOAPUseActionSystem : CEGOAPActionSystem<CEGOAPUse
         Entity<CEGOAPComponent> ent,
         ref CEGOAPActionUpdateEvent<CEGOAPUseAction> args)
     {
+        if (_timing.ApplyingState)
+            return;
+
         var actionEntity = FindOrGrantAction(ent, args.Action.ActionPrototype);
 
         if (actionEntity == null)
