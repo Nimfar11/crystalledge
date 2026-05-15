@@ -63,6 +63,16 @@ public sealed partial class CEDungeonLevelPrototype : IPrototype, IInheritingPro
     public bool Stable;
 
     /// <summary>
+    /// How long after this level instance is created its entry points remain eligible for selection.
+    /// Once this duration has elapsed, new entrants can no longer be routed to this level's entry points.
+    /// Leave null for no time limit.
+    /// In YAML, bare numeric values are interpreted as seconds; time span strings such as <c>hh:mm:ss</c>
+    /// may also be used where supported by the serializer.
+    /// </summary>
+    [DataField]
+    public TimeSpan? MaxEntryTime;
+
+    /// <summary>
     /// When true, the level is auto-generated at round start and registered as an instance.
     /// Used for entry levels: the default game map can be a placeholder (e.g. <c>Empty</c>),
     /// and players spawn into the round-start dungeon level via its embedded spawn points.
