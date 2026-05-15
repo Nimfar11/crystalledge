@@ -339,3 +339,12 @@
   id: 10025
   time: '2026-05-14T15:37:18.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystalledge/pull/240
+- author: TheShuEd
+  changes:
+  - message: The time during which you can join a level where another player is currently
+      playing now varies by floor and depends on the floor's size. The larger the
+      floor, the more time is allowed for players to connect.
+    type: Tweak
+  id: 10026
+  time: '2026-05-15T13:00:19.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystalledge/pull/244
