@@ -392,3 +392,10 @@
   id: 10030
   time: '2026-05-16T14:40:41.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystalledge/pull/250
+- author: TheShuEd
+  changes:
+  - message: Added fireball magic staff!
+    type: Add
+  id: 10031
+  time: '2026-05-16T14:55:32.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystalledge/pull/251
