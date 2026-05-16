@@ -385,3 +385,10 @@
   id: 10029
   time: '2026-05-16T12:28:27.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystalledge/pull/249
+- author: Viator-MV
+  changes:
+  - message: Soul essence no longer fall in abyss!
+    type: Fix
+  id: 10030
+  time: '2026-05-16T14:40:41.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystalledge/pull/250
