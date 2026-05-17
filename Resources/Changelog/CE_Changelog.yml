@@ -399,3 +399,22 @@
   id: 10031
   time: '2026-05-16T14:55:32.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystalledge/pull/251
+- author: TheShuEd
+  changes:
+  - message: Added lanterns for rounstart equipment.
+    type: Add
+  - message: You can now find crayons and dices in the chests in the dungeon.
+    type: Add
+  - message: Added Russian localization
+    type: Add
+  id: 10032
+  time: '2026-05-17T15:05:57.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystalledge/pull/252
+- author: TheShuEd and Inconnu1337
+  changes:
+  - message: "The neutral ability \u201CAir Kiss\u201D has been added. The conditions\
+      \ for obtaining it are a secret..."
+    type: Add
+  id: 10033
+  time: '2026-05-17T21:15:55.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystalledge/pull/253
