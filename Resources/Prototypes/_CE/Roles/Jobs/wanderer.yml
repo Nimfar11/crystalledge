@@ -5,6 +5,9 @@
   description: ce-job-desc-wanderer
   playTimeTracker: CEJobWanderer
   icon: CEJobIconWanderer
+  requirements:
+    - !type:CEAchievementRequirement
+      achievement: ClassWanderer
 
 - type: playTimeTracker
   id: CEJobWanderer
