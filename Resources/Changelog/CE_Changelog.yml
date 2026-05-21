@@ -444,3 +444,11 @@
   id: 10036
   time: '2026-05-21T09:50:03.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystalledge/pull/259
+- author: TheShuEd
+  changes:
+  - message: 'Two common new weapons have been added: the two-handed Heavy Axe and
+      the two-handed sword.'
+    type: Add
+  id: 10037
+  time: '2026-05-21T20:49:33.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystalledge/pull/261
