@@ -550,3 +550,12 @@
   id: 10047
   time: '2026-06-03T12:40:54.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystalledge/pull/279
+- author: TheShuEd
+  changes:
+  - message: Fixed an issue where players could drag mobs along with them
+    type: Fix
+  - message: Fixed an issue where players could jump while in mid-air
+    type: Fix
+  id: 10048
+  time: '2026-06-03T16:43:57.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystalledge/pull/281
