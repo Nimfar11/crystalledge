@@ -532,3 +532,21 @@
   id: 10046
   time: '2026-05-30T11:42:28.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystalledge/pull/275
+- author: TheShuEd
+  changes:
+  - message: "The Warrior's \u201CStone Wall\u201D ability now knocks creatures up\
+      \ by 1 level."
+    type: Add
+  - message: Falling onto stone and ice spikes now deals additional heavy damage.
+    type: Add
+  - message: "The neutral skill \u201CJump\u201D has been added. Parkour is back."
+    type: Add
+  - message: Added 2 new passive abilities for the warrior.
+    type: Add
+  - message: "The Warrior's passive ability \u201CManeuverability\u201D has been removed."
+    type: Remove
+  - message: All fall damage is reduced by half.
+    type: Tweak
+  id: 10047
+  time: '2026-06-03T12:40:54.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystalledge/pull/279
