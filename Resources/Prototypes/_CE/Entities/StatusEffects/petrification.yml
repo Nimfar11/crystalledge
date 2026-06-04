@@ -1,6 +1,6 @@
 - type: entity
-  id: CEStatusEffectFrozen
-  name: Frozen
+  id: CEStatusEffectPetrification
+  name: Petrification
   components:
   - type: CENegativeStatusEffect
   - type: StatusEffect
@@ -8,20 +8,10 @@
       components:
       - CEDamageable
   - type: StatusEffectAlert
-    alert: CEFrozen
+    alert: CEPetrification
   - type: RejuvenateRemovedStatusEffect
-  - type: CEStatusEffectNeutralization
-    neutralizes:
-    - CEStatusEffectFire
-    vfx: CESteamEffect
-    sound:
-      path: /Audio/_CE/Effects/steam_burst.ogg
-  - type: CEStatusEffectConsume
-    consumes:
-    - CEStatusEffectWet
-    - CEStatusEffectColdSlowdown
   - type: CETempShieldStatusEffect
-    absorbPerStack: 2
+    absorbPerStack: 4
     all: true
   - type: CEActionBlockerStatusEffect
     blockActions: true
@@ -39,6 +29,7 @@
     drawdepth: Effects
     sprite: _CE/Structures/Nature/ice_rock.rsi
     noRot: true
+    color: "#5e5438" #TODO
     layers:
     - state: big
       map: [ "status" ]
@@ -52,21 +43,21 @@
   - type: Appearance
   - type: CEStatusEffectStack
     stackDelta: -1
-    baseDuration: 1
+    baseDuration: 2
     mediumAppearance: 5
     highAppearance: 10
   - type: CEActionsProvideStatusEffect
     actions:
-    - CEActionFrozenBreak
+    - CEActionPetrificationBreak
   - type: CEEffectOnLandingStatusEffect
     effects:
     - !type:ShockWaveVFX
       effectTarget: User
       width: 0.1
-    - !type:CETileAffectArea
-      tileEffect: CETileEffectFreeze
-      radius: 1
-      maxStacks: 5
+    - !type:SpawnEntity
+      effectTarget: User
+      spawns:
+      - CEDustTileEffect
     - !type:AreaEffect
       range: 2
       affectCaster: false
@@ -76,20 +67,28 @@
         attackType: Melee
         damage:
           types:
-            Cold: 10
-            Physical: 10
+            Physical: 20
+      - !type:ThrowFromUser
+        effectTarget: Target
+        distance: 1
+        throwPower: 10
+      - !type:SpawnEntity
+        effectTarget: Target
+        spawns:
+        - CEDustTileEffect
 
 - type: alert
-  id: CEFrozen
-  alertViewEntity: CEFrozenAlertSpriteView
-  name: ce-alert-frozen-name
-  description: ce-alert-frozen-desc
+  id: CEPetrification
+  alertViewEntity: CEPetrificationAlertSpriteView
+  name: ce-alert-petrification-name
+  description: ce-alert-petrification-desc
   icons:
   - sprite: _CE/Structures/Nature/ice_rock.rsi
     state: med
+    color: "#5e5438" #TODO
 
 - type: entity
-  id: CEFrozenAlertSpriteView
+  id: CEPetrificationAlertSpriteView
   categories: [ HideSpawnMenu ]
   components:
   - type: GenericCounterAlert
@@ -100,6 +99,7 @@
     layers:
     - sprite: _CE/Structures/Nature/ice_rock.rsi
       state: med
+      color: "#5e5438" #TODO
     - map: [ "1" ]
       offset: 0.65, 0
     - map: [ "10" ]
@@ -108,10 +108,10 @@
       offset: 0.25, 0
 
 - type: entity
-  id: CEActionFrozenBreak
+  id: CEActionPetrificationBreak
   parent: CEActionSpellBase
   name: Break free
-  description: You break free from the icy trap.
+  description: You break free from the stone trap.
   components:
   - type: CEActionStaminaCost
     cost: 8
@@ -124,10 +124,10 @@
       state: break
   - type: InstantAction
     event: !type:CEInstantActionAnimationEvent
-      animation: FrozenBreak
+      animation: PetrificationBreak
 
 - type: entityEffectAnimation
-  id: FrozenBreak
+  id: PetrificationBreak
   movementSpeed: 0
   duration: 0.5
   events:
@@ -150,12 +150,13 @@
       width: 0.05
     - !type:PlaySound
       sound:
-        collection: GlassSmash
+        path: /Audio/Effects/break_stone.ogg
+        params:
+          variation: 0.02
     - !type:RemoveStatusEffectStack
       effectTarget: User
-      statusEffect: CEStatusEffectFrozen
+      statusEffect: CEStatusEffectPetrification
       amount: 15
     - !type:SpawnEntity
       spawns:
-      - CEFreezeImpactEffect
-
+      - CEDustTileEffect
