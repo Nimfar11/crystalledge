@@ -574,3 +574,16 @@
   id: 10049
   time: '2026-06-04T11:55:21.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystalledge/pull/282
+- author: TheShuEd
+  changes:
+  - message: "A new active ability for the warrior, \u201CPetrifying Strike,\u201D\
+      \ has been added."
+    type: Add
+  - message: "A new passive ability for the Warrior, \u201CStone Trap,\u201D has been\
+      \ added\u2014it creates stone spikes around targets you have turned to stone"
+    type: Add
+  - message: "The warrior's active ability \u201CCruelty\u201D has been removed."
+    type: Remove
+  id: 10050
+  time: '2026-06-04T13:57:34.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystalledge/pull/283
