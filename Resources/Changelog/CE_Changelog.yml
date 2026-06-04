@@ -597,3 +597,20 @@
   id: 10051
   time: '2026-06-04T18:40:42.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystalledge/pull/284
+- author: TheShuEd
+  changes:
+  - message: "Added the mage passive ability \u201CMage Slayer\u201D"
+    type: Add
+  - message: "The warrior's active ability \u201CStone Army\u201D has been added."
+    type: Add
+  - message: "The warrior's active ability \u201CShattering\u201D has been added"
+    type: Add
+  - message: "The priest's passive ability \u201COverheal\u201D has been added."
+    type: Add
+  - message: "The Warrior's \u201CStone Wall\u201D skill has been completely revamped\u2014\
+      it now creates a stone boulder that falls with a shockwave and can be kicked\
+      \ to deal damage on contact."
+    type: Tweak
+  id: 10052
+  time: '2026-06-04T21:23:21.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystalledge/pull/285
