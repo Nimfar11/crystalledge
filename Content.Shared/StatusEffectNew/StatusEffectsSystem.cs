@@ -25,6 +25,11 @@ public sealed partial class StatusEffectsSystem : EntitySystem
 
     public readonly HashSet<string> StatusEffectPrototypes = [];
 
+    // CrystallEdge: Reusable buffer to snapshot status effect entities before Update iteration,
+    // preventing "Collection was modified" when handlers spawn or delete StatusEffectComponent entities mid-loop.
+    private readonly List<EntityUid> _updateBuffer = new();
+    // CrystallEdge end
+
     public override void Initialize()
     {
         base.Initialize();
@@ -47,9 +52,18 @@ public sealed partial class StatusEffectsSystem : EntitySystem
     {
         base.Update(frameTime);
 
-        var query = EntityQueryEnumerator<StatusEffectComponent>();
-        while (query.MoveNext(out var ent, out var effect))
+        // CrystallEdge: Snapshot UIDs first — handlers (e.g. Overheal) may spawn/delete entities with
+        // StatusEffectComponent during the loop, which would invalidate the enumerator mid-iteration.
+        _updateBuffer.Clear();
+        var snapshot = EntityQueryEnumerator<StatusEffectComponent>();
+        while (snapshot.MoveNext(out var e, out _))
+            _updateBuffer.Add(e);
+
+        foreach (var ent in _updateBuffer)
         {
+            if (!_effectQuery.TryComp(ent, out var effect))
+                continue;
+
             TryApplyStatusEffect((ent, effect));
 
             if (effect.EndEffectTime is null)
@@ -71,6 +85,7 @@ public sealed partial class StatusEffectsSystem : EntitySystem
 
             PredictedQueueDel(ent);
         }
+        // CrystallEdge end (snapshot loop)
     }
 
     private void OnPrototypesReloaded(PrototypesReloadedEventArgs args)
