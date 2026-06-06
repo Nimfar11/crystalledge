@@ -1,6 +1,5 @@
 ﻿using Content.Server.Cargo.Components;
 using Content.Shared.Cargo;
-using Content.Shared.Chemistry.Components.SolutionManager;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Materials;
@@ -93,26 +92,13 @@ public abstract partial class CESharedEconomySystem : EntitySystem
     {
         var price = 0.0;
 
-        if (prototype.Components.TryGetValue(Factory.GetComponentName<SolutionContainerManagerComponent>(), out var solManager))
+        foreach (var (_, solution) in _solutionContainerSystem.EnumerateSolutions(prototype))
         {
-            var solComp = (SolutionContainerManagerComponent) solManager.Component;
-            price += GetSolutionPrice(solComp);
-        }
-
-        return price;
-    }
-    private double GetSolutionPrice(SolutionContainerManagerComponent component)
-    {
-        var price = 0.0;
-
-        foreach (var (_, prototype) in _solutionContainerSystem.EnumerateSolutions(component))
-        {
-            foreach (var (reagent, quantity) in prototype.Contents)
+            foreach (var (reagent, quantity) in solution.Contents)
             {
                 if (!_prototypeManager.TryIndex<ReagentPrototype>(reagent.Prototype, out var reagentProto))
                     continue;
 
-                // TODO check ReagentData for price information?
                 price += (float) quantity * reagentProto.PricePerUnit;
             }
         }
