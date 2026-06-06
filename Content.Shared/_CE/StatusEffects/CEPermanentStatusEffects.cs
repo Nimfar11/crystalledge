@@ -1,4 +1,4 @@
-using Content.Shared.StatusEffectNew;
+﻿using Content.Shared.StatusEffectNew;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
@@ -17,7 +17,7 @@ public sealed partial class CEPermanentStatusEffectsComponent : Component
 
 public sealed partial class CEPermanentStatusEffectsSystem : EntitySystem
 {
-    [Dependency] private readonly StatusEffectsSystem _statusEffects = default!;
+    [Dependency] private StatusEffectsSystem _statusEffects = default!;
 
     public override void Initialize()
     {

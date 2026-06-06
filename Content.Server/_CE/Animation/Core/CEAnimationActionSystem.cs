@@ -1,4 +1,4 @@
-using System.Linq;
+﻿using System.Linq;
 using Content.Server._CE.ZLevels.Core;
 using Content.Shared._CE.Animation.Core;
 using Content.Shared._CE.Animation.Core.Components;
@@ -9,7 +9,7 @@ namespace Content.Server._CE.Animation.Core;
 
 public sealed partial class CEAnimationActionSystem : CESharedAnimationActionSystem
 {
-    [Dependency] private readonly SharedTransformSystem _transform = default!;
+    [Dependency] private SharedTransformSystem _transform = default!;
 
     /// <summary>
     /// Sends <see cref="CEEntityAnimationEvent"/> to all clients in PVS (except the entity's own player)

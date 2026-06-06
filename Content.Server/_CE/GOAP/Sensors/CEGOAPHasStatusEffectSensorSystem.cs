@@ -1,4 +1,4 @@
-using Content.Shared._CE.GOAP;
+﻿using Content.Shared._CE.GOAP;
 using Content.Shared._CE.GOAP.Components;
 using Content.Shared._CE.GOAP.Selectors;
 using Content.Shared._CE.StatusEffects;
@@ -27,9 +27,9 @@ public sealed partial class CEGOAPHasStatusEffectSensorComponent : Component
     public EntProtoId StatusEffect;
 }
 
-public sealed class CEGOAPHasStatusEffectSensorSystem : EntitySystem
+public sealed partial class CEGOAPHasStatusEffectSensorSystem : EntitySystem
 {
-    [Dependency] private readonly StatusEffectsSystem _statusEffect = default!;
+    [Dependency] private StatusEffectsSystem _statusEffect = default!;
 
     public override void Initialize()
     {

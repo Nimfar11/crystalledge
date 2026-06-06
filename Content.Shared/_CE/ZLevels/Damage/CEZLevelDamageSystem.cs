@@ -1,4 +1,4 @@
-/*
+﻿/*
  * This file is sublicensed under MIT License
  * https://github.com/space-wizards/space-station-14/blob/master/LICENSE.TXT
  */
@@ -16,14 +16,14 @@ using Robust.Shared.Timing;
 
 namespace Content.Shared._CE.ZLevels.Damage;
 
-public sealed class CEZLevelDamageSystem : EntitySystem
+public sealed partial class CEZLevelDamageSystem : EntitySystem
 {
-    [Dependency] private readonly SharedStunSystem _stun = default!;
-    [Dependency] private readonly CESharedDamageableSystem _damageable = default!;
-    [Dependency] private readonly EntityLookupSystem _lookup = default!;
-    [Dependency] private readonly IConfigurationManager _config = default!;
-    [Dependency] private readonly INetManager _net = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private SharedStunSystem _stun = default!;
+    [Dependency] private CESharedDamageableSystem _damageable = default!;
+    [Dependency] private EntityLookupSystem _lookup = default!;
+    [Dependency] private IConfigurationManager _config = default!;
+    [Dependency] private INetManager _net = default!;
+    [Dependency] private IGameTiming _timing = default!;
 
     public float BaseFallingDamage { get; private set; }
     public float BaseFallingOtherDamage { get; private set; }
@@ -109,7 +109,7 @@ public sealed class CEZLevelDamageSystem : EntitySystem
 /// This event is triggered both on the entity that fell and on all entities that it fell on.
 /// Together, they calculate the damage and the duration that should be applied to the fallen entity.
 /// </summary>
-public sealed class CEZFallingDamageCalculateEvent(EntityUid fallen, float speed) : EntityEventArgs
+public sealed partial class CEZFallingDamageCalculateEvent(EntityUid fallen, float speed) : EntityEventArgs
 {
     public EntityUid Fallen = fallen;
 
@@ -121,7 +121,7 @@ public sealed class CEZFallingDamageCalculateEvent(EntityUid fallen, float speed
 /// <summary>
 /// Called on a falling entity to calculate how much damage it should inflict on everything it falls on.
 /// </summary>
-public sealed class CEZFallingOnTargetDamageCalculateEvent(float speed) : EntityEventArgs
+public sealed partial class CEZFallingOnTargetDamageCalculateEvent(float speed) : EntityEventArgs
 {
     public float DamageMultiplier = 1;
     public float StunMultiplier = 1;
@@ -131,7 +131,7 @@ public sealed class CEZFallingOnTargetDamageCalculateEvent(float speed) : Entity
 /// <summary>
 /// Event raised on a falling entity to inform it about the entities it is landing on and the impact speed.
 /// </summary>
-public sealed class CEZImFallOnEvent(HashSet<EntityUid> targets, float speed) : EntityEventArgs
+public sealed partial class CEZImFallOnEvent(HashSet<EntityUid> targets, float speed) : EntityEventArgs
 {
     public HashSet<EntityUid> Targets = targets;
     public float Speed = speed;
@@ -140,7 +140,7 @@ public sealed class CEZImFallOnEvent(HashSet<EntityUid> targets, float speed) : 
 /// <summary>
 /// Event raised on an entity that is being fallen on to inform it about the falling entity and the impact speed.
 /// </summary>
-public sealed class CEZFellOnMeEvent(EntityUid fallen, float speed) : EntityEventArgs
+public sealed partial class CEZFellOnMeEvent(EntityUid fallen, float speed) : EntityEventArgs
 {
     public EntityUid Fallen = fallen;
     public float Speed = speed;

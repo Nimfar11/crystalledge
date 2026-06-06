@@ -1,4 +1,4 @@
-using Content.Shared._CE.GOAP;
+﻿using Content.Shared._CE.GOAP;
 using Content.Shared._CE.GOAP.Components;
 using Content.Shared._CE.GOAP.Selectors;
 using Content.Shared._CE.Health;
@@ -25,9 +25,9 @@ public sealed partial class CEGOAPCheckHealthLevelSensorComponent : Component
     public float Threshold = 0.5f;
 }
 
-public sealed class CEGOAPCheckHealthLevelSensorSystem : EntitySystem
+public sealed partial class CEGOAPCheckHealthLevelSensorSystem : EntitySystem
 {
-    [Dependency] private readonly CESharedDamageableSystem _damageable = default!;
+    [Dependency] private CESharedDamageableSystem _damageable = default!;
 
     public override void Initialize()
     {

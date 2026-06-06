@@ -1,4 +1,4 @@
-using Content.Shared._CE.GOAP;
+﻿using Content.Shared._CE.GOAP;
 using Content.Shared._CE.GOAP.Components;
 using Content.Shared._CE.GOAP.Selectors;
 using Content.Shared._CE.Health;
@@ -19,9 +19,9 @@ public sealed partial class CEGOAPTargetIsDownSensorComponent : Component
     public CEGOAPTargetSelector Selector = default!;
 }
 
-public sealed class CEGOAPTargetIsDownSensorSystem : EntitySystem
+public sealed partial class CEGOAPTargetIsDownSensorSystem : EntitySystem
 {
-    [Dependency] private readonly CEMobStateSystem _mobState = default!;
+    [Dependency] private CEMobStateSystem _mobState = default!;
 
     public override void Initialize()
     {

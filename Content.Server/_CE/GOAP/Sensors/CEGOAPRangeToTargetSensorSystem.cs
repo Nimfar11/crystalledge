@@ -1,4 +1,4 @@
-using Content.Shared._CE.GOAP;
+﻿using Content.Shared._CE.GOAP;
 using Content.Shared._CE.GOAP.Components;
 using Content.Shared._CE.GOAP.Selectors;
 using Robust.Shared.Map;
@@ -31,11 +31,11 @@ public sealed partial class CEGOAPRangeToTargetSensorComponent : Component
     public TimeSpan NextUpdateTime;
 }
 
-public sealed class CEGOAPRangeToTargetSensorSystem : EntitySystem
+public sealed partial class CEGOAPRangeToTargetSensorSystem : EntitySystem
 {
-    [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private IGameTiming _timing = default!;
 
-    [Dependency] private readonly EntityQuery<TransformComponent> _xformQuery = default!;
+    [Dependency] private EntityQuery<TransformComponent> _xformQuery = default!;
 
     public override void Initialize()
     {
