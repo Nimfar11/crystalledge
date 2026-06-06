@@ -1,4 +1,4 @@
-using Content.Shared.Examine;
+﻿using Content.Shared.Examine;
 using Content.Shared.Ghost;
 using Content.Shared.IdentityManagement.Components;
 using Content.Shared.Mind;
@@ -12,8 +12,8 @@ namespace Content.Shared._CE.IdentityRecognition;
 
 public abstract class CESharedIdentityRecognitionSystem : EntitySystem
 {
-    [Dependency] private readonly SharedUserInterfaceSystem _uiSystem = default!;
-    [Dependency] private readonly SharedMindSystem _mind = default!;
+    [Dependency] private SharedUserInterfaceSystem _uiSystem = default!;
+    [Dependency] private SharedMindSystem _mind = default!;
 
     public override void Initialize()
     {

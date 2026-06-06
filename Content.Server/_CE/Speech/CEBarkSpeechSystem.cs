@@ -12,9 +12,9 @@ namespace Content.Server._CE.Speech;
 /// </summary>
 public sealed class CEBarkSpeechSystem : CESharedBarkSpeechSystem
 {
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly IPrototypeManager _proto = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private IPrototypeManager _proto = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
 
     private readonly Dictionary<EntityUid, BarkSequence> _activeBarks = new();
 

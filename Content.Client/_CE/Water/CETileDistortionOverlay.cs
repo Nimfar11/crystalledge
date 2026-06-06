@@ -1,4 +1,4 @@
-using Content.Client.Graphics;
+﻿using Content.Client.Graphics;
 using Content.Shared._CE.Water;
 using Content.Shared.CCVar;
 using Robust.Client.Graphics;
@@ -37,11 +37,11 @@ public sealed class CETileDistortionOverlay : Overlay
 
     private bool _reducedMotion;
 
-    [Dependency] private readonly IMapManager _mapManager = default!;
-    [Dependency] private readonly IPrototypeManager _proto = default!;
-    [Dependency] private readonly IClyde _clyde = default!;
-    [Dependency] private readonly IConfigurationManager _configManager = default!;
-    [Dependency] private readonly IResourceCache _resourceCache = default!;
+    [Dependency] private IMapManager _mapManager = default!;
+    [Dependency] private IPrototypeManager _proto = default!;
+    [Dependency] private IClyde _clyde = default!;
+    [Dependency] private IConfigurationManager _configManager = default!;
+    [Dependency] private IResourceCache _resourceCache = default!;
 
     private readonly EntityLookupSystem _lookup;
     private readonly SharedTransformSystem _xformSys;

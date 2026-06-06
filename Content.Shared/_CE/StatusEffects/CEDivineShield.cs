@@ -1,4 +1,4 @@
-using Content.Shared._CE.Health;
+﻿using Content.Shared._CE.Health;
 using Content.Shared._CE.StatusEffects.Core;
 using Content.Shared.StatusEffectNew;
 using Content.Shared.StatusEffectNew.Components;
@@ -13,7 +13,7 @@ public sealed partial class CEDivineShieldStatusEffectComponent : Component
 
 public sealed class CEDivineShieldSystem : EntitySystem
 {
-    [Dependency] private readonly CEStatusEffectStackSystem _status = default!;
+    [Dependency] private CEStatusEffectStackSystem _status = default!;
 
     public override void Initialize()
     {

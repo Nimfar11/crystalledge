@@ -1,4 +1,4 @@
-using Content.Shared.CCVar;
+﻿using Content.Shared.CCVar;
 using Robust.Shared;
 using Robust.Shared.Configuration;
 
@@ -10,7 +10,7 @@ namespace Content.Client._Baseline.EntityFilter;
 /// </summary>
 public sealed class BaselineSystem : EntitySystem
 {
-    [Dependency] private readonly IConfigurationManager _cfg = default!;
+    [Dependency] private IConfigurationManager _cfg = default!;
 
     public override void Initialize()
     {

@@ -1,4 +1,4 @@
-using System.Linq;
+﻿using System.Linq;
 using Content.Server._CE.Procedural.Instance.Components;
 using Content.Server._CE.Procedural.Prototypes;
 using Content.Server._CE.ZLevels.Core;
@@ -19,9 +19,9 @@ namespace Content.Server._CE.Procedural.Overview;
 /// </summary>
 public sealed class CEPlayerDungeonOverviewSystem : EntitySystem
 {
-    [Dependency] private readonly IPrototypeManager _proto = default!;
-    [Dependency] private readonly UserInterfaceSystem _ui = default!;
-    [Dependency] private readonly CEZLevelsSystem _zLevels = default!;
+    [Dependency] private IPrototypeManager _proto = default!;
+    [Dependency] private UserInterfaceSystem _ui = default!;
+    [Dependency] private CEZLevelsSystem _zLevels = default!;
 
     private EntityQuery<CEDungeonInstanceComponent> _instanceQuery;
     private EntityQuery<CEZLevelsNetworkComponent> _zNetQuery;

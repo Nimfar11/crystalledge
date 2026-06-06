@@ -1,4 +1,4 @@
-using Content.Server._CE.ZLevels.Core;
+﻿using Content.Server._CE.ZLevels.Core;
 using Content.Shared._CE.Camera;
 using Content.Shared._CE.Health;
 using Content.Shared.Effects;
@@ -7,8 +7,8 @@ namespace Content.Server._CE.Health;
 
 public sealed class CEDamageableSystem : CESharedDamageableSystem
 {
-    [Dependency] private readonly SharedColorFlashEffectSystem _color = default!;
-    [Dependency] private readonly CEScreenshakeSystem _shake = default!;
+    [Dependency] private SharedColorFlashEffectSystem _color = default!;
+    [Dependency] private CEScreenshakeSystem _shake = default!;
 
     protected override void RaiseDamageEffect(EntityUid target, EntityUid? source)
     {

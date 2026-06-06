@@ -1,4 +1,4 @@
-/*
+﻿/*
  * This file is sublicensed under MIT License
  * https://github.com/space-wizards/space-station-14/blob/master/LICENSE.TXT
  *
@@ -14,8 +14,8 @@ namespace Content.Shared._CE.Blinking;
 
 public abstract class CESharedBlinkingSystem : EntitySystem
 {
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private IRobustRandom _random = default!;
     [Dependency] protected readonly SharedAppearanceSystem Appearance = default!;
 
     /// <inheritdoc/>

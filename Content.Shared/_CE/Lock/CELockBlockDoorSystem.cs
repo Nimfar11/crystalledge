@@ -1,4 +1,4 @@
-using Content.Shared.Doors;
+﻿using Content.Shared.Doors;
 using Content.Shared.Lock;
 using Content.Shared.Popups;
 using Robust.Shared.Audio;
@@ -14,8 +14,8 @@ namespace Content.Shared._CE.Lock;
 /// </summary>
 public sealed class CELockBlockDoorSystem : EntitySystem
 {
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
 
     private static readonly SoundSpecifier DoorknobSound = new SoundCollectionSpecifier("CEDoorknob")
     {

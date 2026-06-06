@@ -1,4 +1,4 @@
-using Content.Shared._CE.Achievements;
+﻿using Content.Shared._CE.Achievements;
 using Content.Shared._CE.Achievements.Prototypes;
 using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
@@ -7,7 +7,7 @@ namespace Content.Server._CE.Achievements;
 
 public sealed class CEAchievementsRequirementManager : ICEAchievementsRequirementManager
 {
-    [Dependency] private readonly IEntityManager _entityManager = default!;
+    [Dependency] private IEntityManager _entityManager = default!;
 
     public void Initialize()
     {

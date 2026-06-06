@@ -1,4 +1,4 @@
-using Content.Shared._CE.StatusEffects.Core.Components;
+﻿using Content.Shared._CE.StatusEffects.Core.Components;
 using Content.Shared.StatusEffectNew;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Map;
@@ -9,8 +9,8 @@ namespace Content.Shared._CE.StatusEffects.Core;
 
 public abstract class CESharedStatusEffectVFXSystem : EntitySystem
 {
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly CEStatusEffectStackSystem _stackSystem = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private CEStatusEffectStackSystem _stackSystem = default!;
 
     public override void Initialize()
     {

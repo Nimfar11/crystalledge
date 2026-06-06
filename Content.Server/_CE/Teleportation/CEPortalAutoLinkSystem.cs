@@ -1,4 +1,4 @@
-using Content.Shared.Teleportation.Systems;
+﻿using Content.Shared.Teleportation.Systems;
 
 namespace Content.Server._CE.Teleportation;
 
@@ -12,7 +12,7 @@ namespace Content.Server._CE.Teleportation;
 /// </summary>
 public sealed class CEPortalAutoLinkSystem : EntitySystem
 {
-    [Dependency] private readonly LinkedEntitySystem _link = default!;
+    [Dependency] private LinkedEntitySystem _link = default!;
 
     public override void Initialize()
     {

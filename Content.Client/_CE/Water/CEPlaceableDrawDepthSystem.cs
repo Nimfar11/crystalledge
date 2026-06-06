@@ -1,4 +1,4 @@
-using Content.Shared._CE.Water;
+﻿using Content.Shared._CE.Water;
 using Content.Shared.Placeable;
 using Robust.Client.GameObjects;
 
@@ -11,7 +11,7 @@ namespace Content.Client._CE.Water;
 /// </summary>
 public sealed class CEPlaceableDrawDepthSystem : EntitySystem
 {
-    [Dependency] private readonly SpriteSystem _sprite = default!;
+    [Dependency] private SpriteSystem _sprite = default!;
 
     public override void Initialize()
     {

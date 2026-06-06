@@ -1,4 +1,4 @@
-using Content.Shared._CE.Health;
+﻿using Content.Shared._CE.Health;
 using Content.Shared._CE.Health.Components;
 using Robust.Client.Graphics;
 using Robust.Client.Player;
@@ -8,9 +8,9 @@ namespace Content.Client._CE.Health;
 
 public sealed class CEDamageOverlaySystem : EntitySystem
 {
-    [Dependency] private readonly IOverlayManager _overlayManager = default!;
-    [Dependency] private readonly IPlayerManager _playerManager = default!;
-    [Dependency] private readonly CESharedDamageableSystem _damageable = default!;
+    [Dependency] private IOverlayManager _overlayManager = default!;
+    [Dependency] private IPlayerManager _playerManager = default!;
+    [Dependency] private CESharedDamageableSystem _damageable = default!;
 
     private CEDamageOverlay _overlay = default!;
 

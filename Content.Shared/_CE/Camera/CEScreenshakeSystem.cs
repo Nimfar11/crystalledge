@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2026 Mirrorcult
+﻿// SPDX-FileCopyrightText: 2026 Mirrorcult
 //
 // SPDX-License-Identifier: MIT
 
@@ -17,7 +17,7 @@ namespace Content.Shared._CE.Camera;
 /// </summary>
 public sealed class CEScreenshakeSystem : EntitySystem
 {
-    [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private IGameTiming _timing = default!;
 
     #region Internal
 

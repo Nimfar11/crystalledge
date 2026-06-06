@@ -12,7 +12,7 @@ namespace Content.Shared._CE.StatusEffects.Core;
 /// </summary>
 public sealed class CEStatusEffectStackAlertSystem : EntitySystem
 {
-    [Dependency] private readonly AlertsSystem _alerts = default!;
+    [Dependency] private AlertsSystem _alerts = default!;
 
     public override void Initialize()
     {

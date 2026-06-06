@@ -1,4 +1,4 @@
-using Content.Client.Resources;
+﻿using Content.Client.Resources;
 using Robust.Client.Graphics;
 using Robust.Client.ResourceManagement;
 using Robust.Client.UserInterface;
@@ -19,8 +19,8 @@ public sealed class CEScreenPopupControl : Control
     private const float HoldTime = 3f;
     private const float FadeOutDuration = 2f;
 
-    [Dependency] private readonly IResourceCache _resourceCache = default!;
-    [Dependency] private readonly FontTagHijackHolder _fontHijack = default!;
+    [Dependency] private IResourceCache _resourceCache = default!;
+    [Dependency] private FontTagHijackHolder _fontHijack = default!;
 
     public event Action? OnAnimationEnd;
 

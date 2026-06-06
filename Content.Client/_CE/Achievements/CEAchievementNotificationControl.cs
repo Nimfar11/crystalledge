@@ -1,4 +1,4 @@
-using Content.Client.Message;
+﻿using Content.Client.Message;
 using Content.Shared._CE.Achievements.Prototypes;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
@@ -17,7 +17,7 @@ public sealed class CEAchievementNotificationControl : Control
     private const float SlideDuration = 0.5f; // Time to slide in/out
     private const float DisplayTime = 3.0f;   // Time to stay visible
 
-    [Dependency] private readonly IEntityManager _entManager = default!;
+    [Dependency] private IEntityManager _entManager = default!;
     private readonly SpriteSystem _spriteSystem = default!;
 
     public event Action? OnAnimationEnd;

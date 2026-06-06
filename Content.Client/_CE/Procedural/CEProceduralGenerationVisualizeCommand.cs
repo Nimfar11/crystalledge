@@ -1,4 +1,4 @@
-using Robust.Client.Graphics;
+﻿using Robust.Client.Graphics;
 using Robust.Shared.Console;
 
 namespace Content.Client._CE.Procedural;
@@ -9,7 +9,7 @@ namespace Content.Client._CE.Procedural;
 /// </summary>
 public sealed class CEProceduralGenerationVisualizeCommand : LocalizedCommands
 {
-    [Dependency] private readonly IOverlayManager _overlay = default!;
+    [Dependency] private IOverlayManager _overlay = default!;
 
     public override string Command => "dungen_generation_visualize";
 

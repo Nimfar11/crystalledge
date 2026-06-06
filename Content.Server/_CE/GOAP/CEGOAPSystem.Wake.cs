@@ -1,4 +1,4 @@
-using Content.Shared._CE.GOAP.Components;
+﻿using Content.Shared._CE.GOAP.Components;
 using Content.Shared._CE.Health;
 using Content.Shared._CE.Health.Components;
 using Content.Shared.NPC;
@@ -8,7 +8,7 @@ namespace Content.Server._CE.GOAP;
 
 public sealed partial class CEGOAPSystem
 {
-    [Dependency] private readonly CEMobStateSystem _mobState = default!;
+    [Dependency] private CEMobStateSystem _mobState = default!;
 
     private void InitWake()
     {

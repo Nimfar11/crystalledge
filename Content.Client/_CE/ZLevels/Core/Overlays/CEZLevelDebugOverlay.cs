@@ -1,4 +1,4 @@
-/*
+﻿/*
  * This file is sublicensed under MIT License
  * https://github.com/space-wizards/space-station-14/blob/master/LICENSE.TXT
  */
@@ -15,8 +15,8 @@ namespace Content.Client._CE.ZLevels.Core.Overlays;
 
 public sealed class CEZLevelDebugOverlay : Overlay
 {
-    [Dependency] private readonly IEntityManager _entityManager = null!;
-    [Dependency] private readonly IResourceCache _cache = null!;
+    [Dependency] private IEntityManager _entityManager = null!;
+    [Dependency] private IResourceCache _cache = null!;
 
     private readonly CESharedZLevelsSystem _zLevels;
     private readonly SharedTransformSystem _transform;
@@ -73,7 +73,7 @@ public sealed class CEZLevelDebugOverlay : Overlay
 
 public sealed class CEShowZLevelDebugCommand : LocalizedCommands
 {
-    [Dependency] private readonly IOverlayManager _overlayManager = null!;
+    [Dependency] private IOverlayManager _overlayManager = null!;
 
     public override string Command => "showzleveldebug";
 

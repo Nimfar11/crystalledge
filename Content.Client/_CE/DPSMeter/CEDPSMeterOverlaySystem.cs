@@ -1,4 +1,4 @@
-using Content.Shared._CE.DPSMeter;
+﻿using Content.Shared._CE.DPSMeter;
 using Robust.Client.Graphics;
 using Robust.Client.ResourceManagement;
 using Robust.Shared.Timing;
@@ -10,9 +10,9 @@ namespace Content.Client._CE.DPSMeter;
 /// </summary>
 public sealed class CEDPSMeterOverlaySystem : EntitySystem
 {
-    [Dependency] private readonly IOverlayManager _overlayMan = default!;
-    [Dependency] private readonly IResourceCache _cache = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private IOverlayManager _overlayMan = default!;
+    [Dependency] private IResourceCache _cache = default!;
+    [Dependency] private IGameTiming _timing = default!;
 
     private CEDPSMeterOverlay _overlay = default!;
 

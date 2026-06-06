@@ -1,4 +1,4 @@
-using Content.Server._CE.Procedural.Prototypes;
+﻿using Content.Server._CE.Procedural.Prototypes;
 using Content.Server.Administration;
 using Content.Shared.Administration;
 using Robust.Shared.Console;
@@ -9,8 +9,8 @@ namespace Content.Server._CE.Procedural.Commands;
 [AdminCommand(AdminFlags.Mapping)]
 public sealed class CEDungenCommand : LocalizedCommands
 {
-    [Dependency] private readonly IEntityManager _entities = default!;
-    [Dependency] private readonly IPrototypeManager _proto = default!;
+    [Dependency] private IEntityManager _entities = default!;
+    [Dependency] private IPrototypeManager _proto = default!;
 
     public override string Command => "dungen";
 

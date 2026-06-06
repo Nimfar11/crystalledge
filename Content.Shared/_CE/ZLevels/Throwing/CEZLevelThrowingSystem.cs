@@ -1,4 +1,4 @@
-using Content.Shared._CE.ZLevels.Core.Components;
+﻿using Content.Shared._CE.ZLevels.Core.Components;
 using Content.Shared._CE.ZLevels.Core.EntitySystems;
 using Content.Shared.Throwing;
 
@@ -6,7 +6,7 @@ namespace Content.Shared._CE.ZLevels.Throwing;
 
 public sealed class CEZLevelThrowingSystem : EntitySystem
 {
-    [Dependency] private readonly CESharedZLevelsSystem _zLevels = default!;
+    [Dependency] private CESharedZLevelsSystem _zLevels = default!;
 
     public override void Initialize()
     {

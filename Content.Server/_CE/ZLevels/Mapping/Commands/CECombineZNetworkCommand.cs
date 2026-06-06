@@ -1,4 +1,4 @@
-/*
+﻿/*
  * This file is sublicensed under MIT License
  * https://github.com/space-wizards/space-station-14/blob/master/LICENSE.TXT
  */
@@ -15,10 +15,10 @@ namespace Content.Server._CE.ZLevels.Mapping.Commands;
 [AdminCommand(AdminFlags.Server | AdminFlags.Mapping)]
 public sealed class CECombineZNetworkCommand : LocalizedEntityCommands
 {
-    [Dependency] private readonly IEntityManager _entities = default!;
-    [Dependency] private readonly MapSystem _map = default!;
-    [Dependency] private readonly CEZLevelsSystem _zLevels = default!;
-    [Dependency] private readonly MetaDataSystem _meta = default!;
+    [Dependency] private IEntityManager _entities = default!;
+    [Dependency] private MapSystem _map = default!;
+    [Dependency] private CEZLevelsSystem _zLevels = default!;
+    [Dependency] private MetaDataSystem _meta = default!;
 
     public override string Command => "znetwork-combine";
     public override string Description => "Connects a number of maps into a common network of z-levels. Does not work if one of the maps is already in the z-level network";

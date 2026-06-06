@@ -1,4 +1,4 @@
-using System.Text.RegularExpressions;
+﻿using System.Text.RegularExpressions;
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
@@ -11,7 +11,7 @@ namespace Content.Shared._CE.Speech;
 /// </summary>
 public abstract class CESharedBarkSpeechSystem : EntitySystem
 {
-    [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private IRobustRandom _random = default!;
 
     private static readonly Regex MarkupRegex = new(@"\[.*?\]", RegexOptions.Compiled);
 

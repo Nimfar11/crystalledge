@@ -1,4 +1,4 @@
-using Content.Shared._CE.EphemeralCollectable;
+﻿using Content.Shared._CE.EphemeralCollectable;
 using Robust.Client.GameObjects;
 using Robust.Client.Player;
 using Robust.Shared.Player;
@@ -14,10 +14,10 @@ namespace Content.Client._CE.EphemeralCollectable;
 /// </summary>
 public sealed class CEEphemeralCollectableSystem : CESharedEphemeralCollectableSystem
 {
-    [Dependency] private readonly SpriteSystem _sprite = default!;
-    [Dependency] private readonly PointLightSystem _light = default!;
-    [Dependency] private readonly IPlayerManager _player = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private SpriteSystem _sprite = default!;
+    [Dependency] private PointLightSystem _light = default!;
+    [Dependency] private IPlayerManager _player = default!;
+    [Dependency] private IGameTiming _timing = default!;
 
     public override void Initialize()
     {

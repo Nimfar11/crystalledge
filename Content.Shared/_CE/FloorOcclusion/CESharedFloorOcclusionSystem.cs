@@ -1,4 +1,4 @@
-using Content.Shared._CE.ZLevels.Core.EntitySystems;
+﻿using Content.Shared._CE.ZLevels.Core.EntitySystems;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Events;
@@ -8,7 +8,7 @@ namespace Content.Shared._CE.FloorOcclusion;
 
 public abstract class CESharedFloorOcclusionSystem : EntitySystem
 {
-    [Dependency] private readonly SharedPhysicsSystem _physics = default!;
+    [Dependency] private SharedPhysicsSystem _physics = default!;
 
     public override void Initialize()
     {

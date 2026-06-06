@@ -1,4 +1,4 @@
-using Content.Shared._CE.Speech;
+﻿using Content.Shared._CE.Speech;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
@@ -12,9 +12,9 @@ namespace Content.Client._CE.Speech;
 /// </summary>
 public sealed class CEBarkSpeechSystem : CESharedBarkSpeechSystem
 {
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly IPrototypeManager _proto = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private IPrototypeManager _proto = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
 
     private PreviewSequence? _preview;
 

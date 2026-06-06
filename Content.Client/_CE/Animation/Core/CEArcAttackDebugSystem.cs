@@ -1,4 +1,4 @@
-using Content.Shared._CE.EntityEffect.Effects;
+﻿using Content.Shared._CE.EntityEffect.Effects;
 using Robust.Client.Graphics;
 using Robust.Shared.Console;
 
@@ -10,7 +10,7 @@ namespace Content.Client._CE.Animation.Core;
 /// </summary>
 public sealed class CEArcAttackDebugSystem : EntitySystem
 {
-    [Dependency] private readonly IOverlayManager _overlay = default!;
+    [Dependency] private IOverlayManager _overlay = default!;
 
     private CEMeleeArcOverlay? _activeOverlay;
 
@@ -44,7 +44,7 @@ public sealed class CEArcAttackDebugSystem : EntitySystem
 /// </summary>
 public sealed class CEShowArcAttackCommand : LocalizedCommands
 {
-    [Dependency] private readonly IEntitySystemManager _systemManager = default!;
+    [Dependency] private IEntitySystemManager _systemManager = default!;
 
     public override string Command => "showmeleespread";
 

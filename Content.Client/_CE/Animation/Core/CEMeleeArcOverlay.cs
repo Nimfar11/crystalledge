@@ -1,4 +1,4 @@
-using System.Numerics;
+﻿using System.Numerics;
 using Robust.Client.Graphics;
 using Robust.Shared.Enums;
 using Robust.Shared.Map;
@@ -12,7 +12,7 @@ namespace Content.Client._CE.Animation.Core;
 /// </summary>
 public sealed class CEMeleeArcOverlay : Overlay
 {
-    [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private IGameTiming _timing = default!;
 
     public override OverlaySpace Space => OverlaySpace.WorldSpaceBelowFOV;
 

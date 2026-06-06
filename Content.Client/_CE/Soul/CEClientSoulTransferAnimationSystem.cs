@@ -1,4 +1,4 @@
-using System.Numerics;
+﻿using System.Numerics;
 using Content.Shared._CE.Soul.Components;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
@@ -19,9 +19,9 @@ namespace Content.Client._CE.Soul;
 /// </summary>
 public sealed class CEClientSoulTransferAnimationSystem : EntitySystem
 {
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly SharedTransformSystem _transform = default!;
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private IRobustRandom _random = default!;
+    [Dependency] private SharedTransformSystem _transform = default!;
 
     private EntProtoId ParticleProto = "CESoulTransferParticle";
     private EntProtoId CollectVfxProto = "CEEffectSoulCollect";

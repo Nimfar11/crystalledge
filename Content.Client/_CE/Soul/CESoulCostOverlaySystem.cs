@@ -1,4 +1,4 @@
-using Content.Shared._CE.Soul.Components;
+﻿using Content.Shared._CE.Soul.Components;
 using Robust.Client.Graphics;
 using Robust.Client.Player;
 using Robust.Client.ResourceManagement;
@@ -12,9 +12,9 @@ namespace Content.Client._CE.Soul;
 /// </summary>
 public sealed class CESoulCostOverlaySystem : EntitySystem
 {
-    [Dependency] private readonly IOverlayManager _overlayMan = default!;
-    [Dependency] private readonly IResourceCache _cache = default!;
-    [Dependency] private readonly IPlayerManager _player = default!;
+    [Dependency] private IOverlayManager _overlayMan = default!;
+    [Dependency] private IResourceCache _cache = default!;
+    [Dependency] private IPlayerManager _player = default!;
 
     private CESoulCostOverlay _overlay = default!;
 

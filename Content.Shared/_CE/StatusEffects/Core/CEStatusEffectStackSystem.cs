@@ -1,4 +1,4 @@
-using Content.Shared._CE.EntityEffect.Effects;
+﻿using Content.Shared._CE.EntityEffect.Effects;
 using Content.Shared._CE.StatusEffects.Core.Components;
 using Content.Shared._CE.StatusEffectStacks;
 using Content.Shared.Alert;
@@ -14,11 +14,11 @@ namespace Content.Shared._CE.StatusEffects.Core;
 
 public sealed class CEStatusEffectStackSystem : EntitySystem
 {
-    [Dependency] private readonly StatusEffectsSystem _statusEffect = default!;
-    [Dependency] private readonly AlertsSystem _alerts = default!;
-    [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly INetManager _net = default!;
+    [Dependency] private StatusEffectsSystem _statusEffect = default!;
+    [Dependency] private AlertsSystem _alerts = default!;
+    [Dependency] private SharedAppearanceSystem _appearance = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private INetManager _net = default!;
 
     public override void Initialize()
     {

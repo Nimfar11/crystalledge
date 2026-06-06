@@ -1,4 +1,4 @@
-using Content.Shared._CE.Mana.Core.Components;
+﻿using Content.Shared._CE.Mana.Core.Components;
 using Content.Shared.Audio;
 using Content.Shared.Examine;
 using Content.Shared.Inventory;
@@ -8,7 +8,7 @@ namespace Content.Shared._CE.Mana.Core;
 
 public abstract class CESharedMagicEnergySystem : EntitySystem
 {
-    [Dependency] private readonly SharedAmbientSoundSystem _ambient = default!;
+    [Dependency] private SharedAmbientSoundSystem _ambient = default!;
 
     public override void Initialize()
     {

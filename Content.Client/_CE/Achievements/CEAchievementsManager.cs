@@ -1,4 +1,4 @@
-using Content.Shared._CE.Achievements;
+﻿using Content.Shared._CE.Achievements;
 using Content.Shared._CE.Achievements.Prototypes;
 using Robust.Client;
 using Robust.Client.Player;
@@ -14,9 +14,9 @@ namespace Content.Client._CE.Achievements;
 /// </summary>
 public sealed class CEAchievementsManager : ICEAchievementsRequirementManager
 {
-    [Dependency] private readonly IClientNetManager _netManager = default!;
-    [Dependency] private readonly IBaseClient _client = default!;
-    [Dependency] private readonly IPlayerManager _playerManager = default!;
+    [Dependency] private IClientNetManager _netManager = default!;
+    [Dependency] private IBaseClient _client = default!;
+    [Dependency] private IPlayerManager _playerManager = default!;
 
     /// <summary>
     /// Achievement prototype IDs that the current player has earned.

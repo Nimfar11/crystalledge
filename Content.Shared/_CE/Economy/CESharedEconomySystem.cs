@@ -1,4 +1,4 @@
-using Content.Server.Cargo.Components;
+﻿using Content.Server.Cargo.Components;
 using Content.Shared.Cargo;
 using Content.Shared.Chemistry.Components.SolutionManager;
 using Content.Shared.Chemistry.EntitySystems;
@@ -12,8 +12,8 @@ namespace Content.Shared._CE.Economy;
 //TODO: All of this should be removed when PricingSystem in the upstream moves to Shared.
 public abstract partial class CESharedEconomySystem : EntitySystem
 {
-    [Dependency] private readonly SharedSolutionContainerSystem _solutionContainerSystem = default!;
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+    [Dependency] private SharedSolutionContainerSystem _solutionContainerSystem = default!;
+    [Dependency] private IPrototypeManager _prototypeManager = default!;
 
     /// <summary>
     /// Get a rough price for an entityprototype. Does not consider contained entities.

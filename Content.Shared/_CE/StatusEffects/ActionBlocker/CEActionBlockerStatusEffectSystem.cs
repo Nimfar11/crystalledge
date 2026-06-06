@@ -1,4 +1,4 @@
-using Content.Shared.ActionBlocker;
+﻿using Content.Shared.ActionBlocker;
 using Content.Shared.CombatMode;
 using Content.Shared.Hands;
 using Content.Shared.Interaction.Events;
@@ -15,8 +15,8 @@ namespace Content.Shared._CE.StatusEffects.ActionBlocker;
 
 public sealed class CEActionBlockerStatusEffectSystem : EntitySystem
 {
-    [Dependency] private readonly ActionBlockerSystem _actionBlocker = default!;
-    [Dependency] private readonly SharedCombatModeSystem _combat = default!;
+    [Dependency] private ActionBlockerSystem _actionBlocker = default!;
+    [Dependency] private SharedCombatModeSystem _combat = default!;
 
     public override void Initialize()
     {

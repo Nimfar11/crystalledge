@@ -1,4 +1,4 @@
-using Content.Shared._CE.Health.Components;
+﻿using Content.Shared._CE.Health.Components;
 using Content.Shared._CE.Health.Prototypes;
 using Content.Shared.DoAfter;
 using Content.Shared.Inventory;
@@ -17,8 +17,8 @@ namespace Content.Shared._CE.Health;
 /// </summary>
 public abstract partial class CESharedDamageableSystem : EntitySystem
 {
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private SharedDoAfterSystem _doAfter = default!;
 
     public override void Initialize()
     {

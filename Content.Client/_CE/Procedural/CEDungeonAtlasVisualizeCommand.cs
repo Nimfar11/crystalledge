@@ -1,4 +1,4 @@
-using Content.Shared._CE.ZLevels.Mapping.Prototypes;
+﻿using Content.Shared._CE.ZLevels.Mapping.Prototypes;
 using Robust.Client.Graphics;
 using Robust.Shared.Console;
 using Robust.Shared.Prototypes;
@@ -11,8 +11,8 @@ namespace Content.Client._CE.Procedural;
 /// </summary>
 public sealed class CEDungeonAtlasVisualizeCommand : LocalizedCommands
 {
-    [Dependency] private readonly IOverlayManager _overlay = default!;
-    [Dependency] private readonly IPrototypeManager _proto = default!;
+    [Dependency] private IOverlayManager _overlay = default!;
+    [Dependency] private IPrototypeManager _proto = default!;
 
     public override string Command => "dungen_atlas_visualize";
 

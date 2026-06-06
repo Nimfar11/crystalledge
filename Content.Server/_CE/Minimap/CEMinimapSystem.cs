@@ -1,4 +1,4 @@
-using Content.Server._CE.Procedural.Overview;
+﻿using Content.Server._CE.Procedural.Overview;
 using Content.Shared._CE.Minimap;
 using Content.Shared._CE.Procedural;
 using Content.Shared._CE.ZLevels.Core.EntitySystems;
@@ -14,9 +14,9 @@ namespace Content.Server._CE.Minimap;
 /// </summary>
 public sealed class CEMinimapSystem : EntitySystem
 {
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly CESharedZLevelsSystem _zLevels = default!;
-    [Dependency] private readonly SharedTransformSystem _transform = default!;
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private CESharedZLevelsSystem _zLevels = default!;
+    [Dependency] private SharedTransformSystem _transform = default!;
 
     private EntityQuery<CEGeneratingProceduralDungeonComponent> _dungeonQuery;
 

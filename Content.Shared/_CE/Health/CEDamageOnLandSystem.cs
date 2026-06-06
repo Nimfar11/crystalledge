@@ -1,4 +1,4 @@
-using Content.Shared._CE.Health.Components;
+﻿using Content.Shared._CE.Health.Components;
 using Content.Shared.Throwing;
 
 namespace Content.Shared._CE.Health;
@@ -9,7 +9,7 @@ namespace Content.Shared._CE.Health;
 /// </summary>
 public sealed class CEDamageOnLandSystem : EntitySystem
 {
-    [Dependency] private readonly CESharedDamageableSystem _damage = default!;
+    [Dependency] private CESharedDamageableSystem _damage = default!;
 
     public override void Initialize()
     {

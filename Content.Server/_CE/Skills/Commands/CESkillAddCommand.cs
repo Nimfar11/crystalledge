@@ -1,4 +1,4 @@
-using Content.Server._CE.Skills;
+﻿using Content.Server._CE.Skills;
 using Content.Server.Administration;
 using Content.Shared._CE.Skill.Core.Prototypes;
 using Content.Shared.Administration;
@@ -11,9 +11,9 @@ namespace Content.Server._CE.Skills.Commands;
 [AdminCommand(AdminFlags.Admin)]
 public sealed class CESkillAddCommand : LocalizedCommands
 {
-    [Dependency] private readonly IEntityManager _entities = default!;
-    [Dependency] private readonly ISharedPlayerManager _players = default!;
-    [Dependency] private readonly IPrototypeManager _proto = default!;
+    [Dependency] private IEntityManager _entities = default!;
+    [Dependency] private ISharedPlayerManager _players = default!;
+    [Dependency] private IPrototypeManager _proto = default!;
 
     public override string Command => "skilladd";
 

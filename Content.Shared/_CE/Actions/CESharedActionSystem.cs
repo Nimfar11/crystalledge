@@ -1,4 +1,4 @@
-using Content.Shared._CE.Animation.Core;
+﻿using Content.Shared._CE.Animation.Core;
 using Content.Shared._CE.Animation.Core.Prototypes;
 using Content.Shared._CE.Mana.Core;
 using Content.Shared._CE.Soul;
@@ -15,12 +15,12 @@ namespace Content.Shared._CE.Actions;
 public abstract partial class CESharedActionSystem : EntitySystem
 {
     [Dependency] protected readonly SharedPopupSystem Popup = default!;
-    [Dependency] private readonly CESharedAnimationActionSystem _animation = default!;
-    [Dependency] private readonly SharedTransformSystem _transform = default!;
-    [Dependency] private readonly SharedHandsSystem _hand = default!;
-    [Dependency] private readonly CESharedMagicEnergySystem _magicEnergy = default!;
-    [Dependency] private readonly CESharedSoulSystem _soul = default!;
-    [Dependency] private readonly CEStaminaSystem _stamina = default!;
+    [Dependency] private CESharedAnimationActionSystem _animation = default!;
+    [Dependency] private SharedTransformSystem _transform = default!;
+    [Dependency] private SharedHandsSystem _hand = default!;
+    [Dependency] private CESharedMagicEnergySystem _magicEnergy = default!;
+    [Dependency] private CESharedSoulSystem _soul = default!;
+    [Dependency] private CEStaminaSystem _stamina = default!;
 
     [Dependency] private EntityQuery<ActionComponent> _actionQuery = default!;
 

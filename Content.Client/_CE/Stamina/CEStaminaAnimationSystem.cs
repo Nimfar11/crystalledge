@@ -1,4 +1,4 @@
-using System.Numerics;
+﻿using System.Numerics;
 using Content.Client.Stunnable;
 using Content.Shared._CE.Stamina;
 using Robust.Client.GameObjects;
@@ -12,9 +12,9 @@ namespace Content.Client._CE.Stamina;
 /// </summary>
 public sealed class CEStaminaAnimationSystem : EntitySystem
 {
-    [Dependency] private readonly AnimationPlayerSystem _animation = default!;
-    [Dependency] private readonly CEStaminaSystem _stamina = default!;
-    [Dependency] private readonly StunSystem _stun = default!;
+    [Dependency] private AnimationPlayerSystem _animation = default!;
+    [Dependency] private CEStaminaSystem _stamina = default!;
+    [Dependency] private StunSystem _stun = default!;
 
     private const string AnimationKey = "ce-stamina";
 

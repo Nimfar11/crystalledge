@@ -1,4 +1,4 @@
-using Robust.Client.Graphics;
+﻿using Robust.Client.Graphics;
 
 namespace Content.Client._CE.Water;
 
@@ -7,7 +7,7 @@ namespace Content.Client._CE.Water;
 /// </summary>
 public sealed class CETileDistortionOverlaySystem : EntitySystem
 {
-    [Dependency] private readonly IOverlayManager _overlayMan = default!;
+    [Dependency] private IOverlayManager _overlayMan = default!;
 
     public override void Initialize()
     {

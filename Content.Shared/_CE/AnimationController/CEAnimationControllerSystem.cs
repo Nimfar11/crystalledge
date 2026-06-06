@@ -1,4 +1,4 @@
-using Content.Shared._CE.TimedAppearance;
+﻿using Content.Shared._CE.TimedAppearance;
 using JetBrains.Annotations;
 using Robust.Shared.Timing;
 
@@ -6,8 +6,8 @@ namespace Content.Shared._CE.AnimationController;
 
 public sealed partial class CEAnimationControllerSystem : EntitySystem
 {
-    [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private SharedAppearanceSystem _appearance = default!;
+    [Dependency] private IGameTiming _timing = default!;
 
     public override void Initialize()
     {

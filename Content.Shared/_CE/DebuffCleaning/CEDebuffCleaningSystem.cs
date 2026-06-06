@@ -1,4 +1,4 @@
-using Content.Shared._CE.StatusEffects.Core.Components;
+﻿using Content.Shared._CE.StatusEffects.Core.Components;
 using Content.Shared.StatusEffectNew;
 using Content.Shared.StatusEffectNew.Components;
 
@@ -6,7 +6,7 @@ namespace Content.Shared._CE.DebuffCleaning;
 
 public sealed class CEDebuffCleaningSystem : EntitySystem
 {
-    [Dependency] private readonly StatusEffectsSystem _statusEffect = default!;
+    [Dependency] private StatusEffectsSystem _statusEffect = default!;
 
     public void ClearDebuffs(EntityUid target, EntityUid? source)
     {

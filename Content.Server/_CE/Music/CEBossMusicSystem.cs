@@ -1,4 +1,4 @@
-using Content.Server._CE.Boss;
+﻿using Content.Server._CE.Boss;
 using Content.Shared._CE.Music;
 using Content.Shared._CE.ZLevels.Core.EntitySystems;
 using Robust.Shared.Map;
@@ -15,8 +15,8 @@ namespace Content.Server._CE.Music;
 /// </summary>
 public sealed class CEBossMusicSystem : EntitySystem
 {
-    [Dependency] private readonly IMapManager _mapManager = default!;
-    [Dependency] private readonly CESharedZLevelsSystem _zLevels = default!;
+    [Dependency] private IMapManager _mapManager = default!;
+    [Dependency] private CESharedZLevelsSystem _zLevels = default!;
 
     private readonly HashSet<EntityUid> _affectedMaps = new();
 

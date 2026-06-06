@@ -1,4 +1,4 @@
-using System.Numerics;
+﻿using System.Numerics;
 using Content.Shared._CE.Animation.Floating;
 using Robust.Client.GameObjects;
 using Robust.Shared.Random;
@@ -13,8 +13,8 @@ namespace Content.Client._CE.Animation.Floating;
 /// </summary>
 public sealed class CEAutoFloatingVisualsSystem : EntitySystem
 {
-    [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private IRobustRandom _random = default!;
+    [Dependency] private IGameTiming _timing = default!;
 
     public override void Initialize()
     {

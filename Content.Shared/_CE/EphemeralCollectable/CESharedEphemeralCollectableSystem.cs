@@ -1,4 +1,4 @@
-using Content.Shared._CE.Procedural.Components;
+﻿using Content.Shared._CE.Procedural.Components;
 using Content.Shared.Interaction;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Network;
@@ -21,9 +21,9 @@ namespace Content.Shared._CE.EphemeralCollectable;
 /// </summary>
 public abstract class CESharedEphemeralCollectableSystem : EntitySystem
 {
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly INetManager _net = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private INetManager _net = default!;
 
     public override void Initialize()
     {

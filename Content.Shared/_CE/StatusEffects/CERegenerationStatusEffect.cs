@@ -1,4 +1,4 @@
-using Content.Shared._CE.Health;
+﻿using Content.Shared._CE.Health;
 using Content.Shared._CE.StatusEffects.Core;
 using Content.Shared.StatusEffectNew.Components;
 using Robust.Shared.GameStates;
@@ -20,8 +20,8 @@ public sealed partial class CERegenerationStatusEffectComponent : Component
 
 public sealed class CERegenerationStatusEffectSystem : EntitySystem
 {
-    [Dependency] private readonly CESharedDamageableSystem _damageable = default!;
-    [Dependency] private readonly CEStatusEffectStackSystem _stack = default!;
+    [Dependency] private CESharedDamageableSystem _damageable = default!;
+    [Dependency] private CEStatusEffectStackSystem _stack = default!;
 
     public override void Initialize()
     {

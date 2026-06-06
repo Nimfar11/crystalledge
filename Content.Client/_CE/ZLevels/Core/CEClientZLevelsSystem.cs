@@ -1,4 +1,4 @@
-/*
+﻿/*
  * This file is sublicensed under MIT License
  * https://github.com/space-wizards/space-station-14/blob/master/LICENSE.TXT
  */
@@ -22,8 +22,8 @@ namespace Content.Client._CE.ZLevels.Core;
 /// </summary>
 public sealed partial class CEClientZLevelsSystem : CESharedZLevelsSystem
 {
-    [Dependency] private readonly IOverlayManager _overlay = default!;
-    [Dependency] private readonly IEyeManager _eye = default!;
+    [Dependency] private IOverlayManager _overlay = default!;
+    [Dependency] private IEyeManager _eye = default!;
 
     public override void Initialize()
     {
@@ -70,9 +70,9 @@ public sealed partial class CEClientZLevelsSystem : CESharedZLevelsSystem
 /// </summary>
 internal sealed class CEClientZLevelsPreAnimSystem : EntitySystem
 {
-    [Dependency] private readonly SpriteSystem _sprite = default!;
-    [Dependency] private readonly EntityQuery<MapGridComponent> _mapGridQuery = default!;
-    [Dependency] private readonly EntityQuery<CEZPhysicsComponent> _zPhysQuery = default!;
+    [Dependency] private SpriteSystem _sprite = default!;
+    [Dependency] private EntityQuery<MapGridComponent> _mapGridQuery = default!;
+    [Dependency] private EntityQuery<CEZPhysicsComponent> _zPhysQuery = default!;
 
     public override void Initialize()
     {
@@ -116,8 +116,8 @@ internal sealed class CEClientZLevelsPreAnimSystem : EntitySystem
 /// </summary>
 internal sealed class CEClientZLevelsPostAnimSystem : EntitySystem
 {
-    [Dependency] private readonly SpriteSystem _sprite = default!;
-    [Dependency] private readonly SharedTransformSystem _xform = default!;
+    [Dependency] private SpriteSystem _sprite = default!;
+    [Dependency] private SharedTransformSystem _xform = default!;
 
     public override void Initialize()
     {

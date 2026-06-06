@@ -1,4 +1,4 @@
-using Content.Shared._CE.GOAP.Components;
+﻿using Content.Shared._CE.GOAP.Components;
 using Content.Shared.NPC.Components;
 using Content.Shared.NPC.Systems;
 
@@ -13,9 +13,9 @@ namespace Content.Server._CE.GOAP.Classifiers;
 /// </summary>
 public sealed class CEGOAPKnowledgeCacheSystem : EntitySystem
 {
-    [Dependency] private readonly NpcFactionSystem _faction = default!;
+    [Dependency] private NpcFactionSystem _faction = default!;
 
-    [Dependency] private readonly EntityQuery<NpcFactionMemberComponent> _factionQuery = default!;
+    [Dependency] private EntityQuery<NpcFactionMemberComponent> _factionQuery = default!;
 
     private readonly HashSet<EntityUid> _previousEnemies = new();
 

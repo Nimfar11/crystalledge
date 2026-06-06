@@ -1,4 +1,4 @@
-using Content.Shared._CE.EntityEffect;
+﻿using Content.Shared._CE.EntityEffect;
 using Content.Shared._CE.EntityEffect.Effects;
 using Content.Shared._CE.Health;
 using Content.Shared._CE.MeleeWeapon;
@@ -18,9 +18,9 @@ namespace Content.Shared._CE.StatusEffects.EffectsOnTriggerStatusEffects;
 
 public sealed class CEEffectsOnTriggerStatusEffectSystem : EntitySystem
 {
-    [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
-    [Dependency] private readonly CEStatusEffectStackSystem _stack = default!;
-    [Dependency] private readonly IGameTiming _gameTiming = default!;
+    [Dependency] private EntityWhitelistSystem _whitelist = default!;
+    [Dependency] private CEStatusEffectStackSystem _stack = default!;
+    [Dependency] private IGameTiming _gameTiming = default!;
 
     [Dependency] private EntityQuery<CEStatusEffectStackComponent> _stackQuery = default!;
     [Dependency] private EntityQuery<StatusEffectComponent> _statusQuery = default!;

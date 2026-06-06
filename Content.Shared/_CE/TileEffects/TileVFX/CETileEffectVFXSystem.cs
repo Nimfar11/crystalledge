@@ -1,4 +1,4 @@
-using Content.Shared._CE.TileEffects.Core;
+﻿using Content.Shared._CE.TileEffects.Core;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Map;
@@ -9,9 +9,9 @@ namespace Content.Shared._CE.TileEffects.TileVFX;
 
 public sealed class CETileEffectVFXSystem : EntitySystem
 {
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly INetManager _net = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private INetManager _net = default!;
+    [Dependency] private IGameTiming _timing = default!;
 
     private const double SoundMergeWindow = 1.0;
 

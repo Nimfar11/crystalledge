@@ -1,4 +1,4 @@
-using Content.Shared._CE.Health;
+﻿using Content.Shared._CE.Health;
 using Content.Shared._CE.StatusEffects.Core;
 using Content.Shared._CE.StatusEffects.Core.Components;
 using Content.Shared.StatusEffectNew;
@@ -24,7 +24,7 @@ public sealed partial class CERemoveStackOnHealComponent : Component
 
 public sealed class CERemoveStackOnHealSystem : EntitySystem
 {
-    [Dependency] private readonly CEStatusEffectStackSystem _stack = default!;
+    [Dependency] private CEStatusEffectStackSystem _stack = default!;
 
     public override void Initialize()
     {

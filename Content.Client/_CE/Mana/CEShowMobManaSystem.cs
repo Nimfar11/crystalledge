@@ -1,4 +1,4 @@
-using Content.Client.Overlays;
+﻿using Content.Client.Overlays;
 using Content.Shared._CE.Mana.Core.Components;
 using Content.Shared.Inventory.Events;
 using Robust.Client.Graphics;
@@ -7,7 +7,7 @@ namespace Content.Client._CE.Mana;
 
 public sealed class CEShowMobManaSystem : EquipmentHudSystem<CEShowMobManaComponent>
 {
-    [Dependency] private readonly IOverlayManager _overlayMan = default!;
+    [Dependency] private IOverlayManager _overlayMan = default!;
 
     private CEEntityManaBarOverlay _overlay = default!;
 
