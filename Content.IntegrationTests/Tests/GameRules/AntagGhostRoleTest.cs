@@ -32,6 +32,7 @@ public sealed partial class AntagGhostRoleTest : AntagTest
 
     private static readonly string[] AntagGameRules = GameDataScrounger.EntitiesWithComponent("AntagSelection");
 
+        /* CrystallEdge: diosabled due to fact that we dont use antag code at all
     [Test]
     [TestOf(typeof(GameTicker)), TestOf(typeof(AntagSelectionSystem)), TestOf(typeof(AntagSelectionComponent)), TestOf(typeof(GhostRoleSystem))]
     [TestCaseSource(nameof(AntagGameRules))]
@@ -133,4 +134,5 @@ public sealed partial class AntagGhostRoleTest : AntagTest
         Assert.That(MathHelper.CloseTo(sessionXform.Coordinates.X, xform.Coordinates.X, 0.001f), Is.True);
         Assert.That(MathHelper.CloseTo(sessionXform.Coordinates.Y, xform.Coordinates.Y, 0.001f), Is.True);
     }
+    */
 }
