@@ -26,6 +26,8 @@ public sealed class AllGamePresetsStartTest : AntagTest
 
     private static string[] _gamePresets = GameDataScrounger.PrototypesOfKind<GamePresetPrototype>().Where(p => !IgnoredPresets.Contains(p)).ToArray();
 
+    /* CrystallEdge: Disabled due to fact that we dont use gamemodes
+     
     // Tests that all game modes can start given ideal circumstances.
     [Test]
     [TestOf(typeof(GameTicker)), TestOf(typeof(AntagSelectionSystem)), TestOf(typeof(AntagSelectionComponent))]
@@ -161,4 +163,5 @@ public sealed class AllGamePresetsStartTest : AntagTest
         STicker.SetGamePreset((GamePresetPrototype) null);
         await Pair.RunUntilSynced();
     }
+    */
 }
