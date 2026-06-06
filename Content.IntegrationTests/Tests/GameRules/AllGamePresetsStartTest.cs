@@ -18,7 +18,6 @@ namespace Content.IntegrationTests.Tests.GameRules;
 [TestFixture]
 public sealed class AllGamePresetsStartTest : AntagTest
 {
-
     /* CrystallEdge: Disabled due to fact that we dont use gamemodes
     /// <summary>
     /// A list of blacklisted <see cref="GamePresetPrototype"/> for this test. Some down streams might make changes which nuke upstream game modes they don't use.
