@@ -18,6 +18,8 @@ namespace Content.IntegrationTests.Tests.GameRules;
 [TestFixture]
 public sealed class AllGamePresetsStartTest : AntagTest
 {
+
+    /* CrystallEdge: Disabled due to fact that we dont use gamemodes
     /// <summary>
     /// A list of blacklisted <see cref="GamePresetPrototype"/> for this test. Some down streams might make changes which nuke upstream game modes they don't use.
     /// This prevents them from being tested. If you use this to silence valid test fails and your game fails to start. Skill issue. Do 100 push-ups.
@@ -26,8 +28,6 @@ public sealed class AllGamePresetsStartTest : AntagTest
 
     private static string[] _gamePresets = GameDataScrounger.PrototypesOfKind<GamePresetPrototype>().Where(p => !IgnoredPresets.Contains(p)).ToArray();
 
-    /* CrystallEdge: Disabled due to fact that we dont use gamemodes
-     
     // Tests that all game modes can start given ideal circumstances.
     [Test]
     [TestOf(typeof(GameTicker)), TestOf(typeof(AntagSelectionSystem)), TestOf(typeof(AntagSelectionComponent))]
