@@ -10,7 +10,7 @@ namespace Content.Client._CE.Achievements;
 /// <summary>
 /// Client-side system that handles achievement unlock notifications and displays them as popups.
 /// </summary>
-public sealed class CEAchievementNotificationSystem : EntitySystem
+public sealed partial class CEAchievementNotificationSystem : EntitySystem
 {
     [Dependency] private AudioSystem _audio = default!;
     [Dependency] private IUserInterfaceManager _userInterface = default!;

@@ -9,7 +9,7 @@ namespace Content.Client._CE.Bonfire;
 /// Client-side bonfire system. Reacts to networked state changes by toggling a sprite overlay
 /// layer on the bonfire entity whenever the local player's entity enters <see cref="CEBonfireComponent.UsedBy"/>.
 /// </summary>
-public sealed class CEBonfireSystem : CESharedBonfireSystem
+public sealed partial class CEBonfireSystem : CESharedBonfireSystem
 {
     [Dependency] private IPlayerManager _player = default!;
     [Dependency] private SpriteSystem _sprite = default!;

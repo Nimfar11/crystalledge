@@ -5,7 +5,7 @@ using Robust.Client.Graphics;
 
 namespace Content.Client._CE.Stamina;
 
-public sealed class CEShowMobStaminaSystem : EquipmentHudSystem<CEShowMobStaminaComponent>
+public sealed partial class CEShowMobStaminaSystem : EquipmentHudSystem<CEShowMobStaminaComponent>
 {
     [Dependency] private IOverlayManager _overlayMan = default!;
 

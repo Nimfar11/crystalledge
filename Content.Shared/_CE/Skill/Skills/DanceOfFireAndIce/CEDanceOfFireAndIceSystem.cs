@@ -3,7 +3,7 @@ using Content.Shared.StatusEffectNew;
 
 namespace Content.Shared._CE.Skill.Skills.DanceOfFireAndIce;
 
-public sealed class CEDanceOfFireAndIceSystem : EntitySystem
+public sealed partial class CEDanceOfFireAndIceSystem : EntitySystem
 {
     [Dependency] private StatusEffectsSystem _statusEffect = default!;
 

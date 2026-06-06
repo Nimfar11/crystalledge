@@ -5,7 +5,7 @@ using Robust.Shared.Map.Components;
 
 namespace Content.Server._CE.ZLevels.LaddersCache;
 
-public sealed class CEZLevelsLaddersCacheSystem : EntitySystem
+public sealed partial class CEZLevelsLaddersCacheSystem : EntitySystem
 {
     [Dependency] private SharedMapSystem _map = default!;
     [Dependency] private SharedTransformSystem _transform = default!;

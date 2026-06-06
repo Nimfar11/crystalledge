@@ -11,7 +11,7 @@ using Robust.Shared.Network;
 
 namespace Content.Shared._CE.Bonfire;
 
-public abstract class CESharedBonfireSystem : EntitySystem
+public abstract partial class CESharedBonfireSystem : EntitySystem
 {
     [Dependency] private INetManager _net = default!;
     [Dependency] private CESharedDamageableSystem _damageable = default!;
@@ -99,4 +99,4 @@ public abstract class CESharedBonfireSystem : EntitySystem
 /// <summary>
 /// Raised on a player entity when they successfully use a bonfire for the first time.
 /// </summary>
-public sealed class CEBonfireRestoredEvent : EntityEventArgs;
+public sealed partial class CEBonfireRestoredEvent : EntityEventArgs;

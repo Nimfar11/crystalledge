@@ -12,7 +12,7 @@ public sealed partial class CEGOAPPainPerceptorComponent : Component
 {
 }
 
-public sealed class CEGOAPPainPerceptorSystem : EntitySystem
+public sealed partial class CEGOAPPainPerceptorSystem : EntitySystem
 {
     [Dependency] private CEGOAPSystem _goap = default!;
 

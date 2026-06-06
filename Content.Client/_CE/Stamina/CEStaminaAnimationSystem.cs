@@ -10,7 +10,7 @@ namespace Content.Client._CE.Stamina;
 /// whose intensity scales with how low the entity's CE stamina is.
 /// Mirrors the vanilla StaminaSystem's animation approach.
 /// </summary>
-public sealed class CEStaminaAnimationSystem : EntitySystem
+public sealed partial class CEStaminaAnimationSystem : EntitySystem
 {
     [Dependency] private AnimationPlayerSystem _animation = default!;
     [Dependency] private CEStaminaSystem _stamina = default!;
@@ -136,7 +136,7 @@ public sealed class CEStaminaAnimationSystem : EntitySystem
         }
     }
 
-    private sealed class AnimState
+    private sealed partial class AnimState
     {
         public Vector2 StartOffset;
         public Vector2 LastJitter;

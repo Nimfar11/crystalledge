@@ -9,7 +9,7 @@ using Robust.Shared.Timing;
 
 namespace Content.Client._CE.Health;
 
-public sealed class CEDamageableSystem : CESharedDamageableSystem
+public sealed partial class CEDamageableSystem : CESharedDamageableSystem
 {
     [Dependency] private SharedColorFlashEffectSystem _color = default!;
     [Dependency] private CEScreenshakeSystem _shake = default!;
@@ -55,7 +55,7 @@ public sealed class CEDamageableSystem : CESharedDamageableSystem
     }
 }
 
-public sealed class CEClientMobStateSystem : EntitySystem
+public sealed partial class CEClientMobStateSystem : EntitySystem
 {
     public override void Initialize()
     {

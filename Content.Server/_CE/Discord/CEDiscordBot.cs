@@ -7,7 +7,7 @@ using Robust.Shared.Player;
 
 namespace Content.Server._CE.Discord;
 
-public sealed class CEDiscordBot : IPostInjectInit
+public sealed partial class CEDiscordBot : IPostInjectInit
 {
     [Dependency] private DiscordLink _discordLink = default!;
     [Dependency] private IPlayerManager _playerManager = default!;

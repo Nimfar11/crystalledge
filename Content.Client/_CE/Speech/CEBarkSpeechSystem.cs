@@ -10,7 +10,7 @@ namespace Content.Client._CE.Speech;
 /// Client-side bark speech system. Provides <see cref="PlayPreview"/> for the
 /// character editor to audition bark voice settings without a server round-trip.
 /// </summary>
-public sealed class CEBarkSpeechSystem : CESharedBarkSpeechSystem
+public sealed partial class CEBarkSpeechSystem : CESharedBarkSpeechSystem
 {
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private IPrototypeManager _proto = default!;
@@ -95,7 +95,7 @@ public sealed class CEBarkSpeechSystem : CESharedBarkSpeechSystem
             _preview = null;
     }
 
-    private sealed class PreviewSequence
+    private sealed partial class PreviewSequence
     {
         public List<BarkSyllable> Syllables = new();
         public int NextIndex;

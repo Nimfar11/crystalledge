@@ -9,7 +9,7 @@ using Robust.Shared.Player;
 
 namespace Content.Server._CE.MeleeWeapon;
 
-public sealed class CEWeaponSystem : CESharedWeaponSystem
+public sealed partial class CEWeaponSystem : CESharedWeaponSystem
 {
     [Dependency] private LagCompensationSystem _lag = default!;
     private const int MaxTargets = 10;

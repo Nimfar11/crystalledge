@@ -10,7 +10,7 @@ namespace Content.Client._CE.Animation.Core;
 /// Debug overlay that draws ArcAttack hitboxes for 0.1 seconds when they fire.
 /// Toggled via the "showarcattack" console command.
 /// </summary>
-public sealed class CEMeleeArcOverlay : Overlay
+public sealed partial class CEMeleeArcOverlay : Overlay
 {
     [Dependency] private IGameTiming _timing = default!;
 
@@ -118,7 +118,7 @@ public sealed class CEMeleeArcOverlay : Overlay
         }
     }
 
-    private sealed class ArcAttackDebugEntry
+    private sealed partial class ArcAttackDebugEntry
     {
         public MapCoordinates Position;
         public Angle Direction;

@@ -8,7 +8,7 @@ using Robust.Shared.Timing;
 
 namespace Content.Client._CE.Health;
 
-public sealed class CEDamageOverlay : Overlay
+public sealed partial class CEDamageOverlay : Overlay
 {
     private static readonly ProtoId<ShaderPrototype> CircleMaskShader = "GradientCircleMask";
 

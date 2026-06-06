@@ -19,7 +19,7 @@ namespace Content.Shared._CE.EphemeralCollectable;
 /// The <see cref="CEEphemeralCollectableComponent.CollectedBy"/> guard prevents double-application
 /// during physics resimulation.
 /// </summary>
-public abstract class CESharedEphemeralCollectableSystem : EntitySystem
+public abstract partial class CESharedEphemeralCollectableSystem : EntitySystem
 {
     [Dependency] private SharedAudioSystem _audio = default!;
     [Dependency] private IGameTiming _timing = default!;

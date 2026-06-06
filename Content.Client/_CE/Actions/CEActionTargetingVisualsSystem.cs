@@ -8,7 +8,7 @@ namespace Content.Client._CE.Actions;
 /// The overlay itself reads <see cref="ActionUIController.SelectingTargetFor"/>
 /// every frame to decide what to draw.
 /// </summary>
-public sealed class CEActionTargetingVisualsSystem : EntitySystem
+public sealed partial class CEActionTargetingVisualsSystem : EntitySystem
 {
     [Dependency] private IOverlayManager _overlay = default!;
 

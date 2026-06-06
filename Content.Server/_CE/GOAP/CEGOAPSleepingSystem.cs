@@ -15,7 +15,7 @@ namespace Content.Server._CE.GOAP;
 /// - Alarm events (noise/explosions)
 /// - Chain reaction from a nearby mob waking
 /// </summary>
-public sealed class CEGOAPSleepingSystem : EntitySystem
+public sealed partial class CEGOAPSleepingSystem : EntitySystem
 {
     [Dependency] private CEGOAPSystem _goap = default!;
     [Dependency] private EntityLookupSystem _lookup = default!;

@@ -10,7 +10,7 @@ namespace Content.Shared._CE.StatusEffects.Core;
 /// <summary>
 /// Changes additional status effect alert
 /// </summary>
-public sealed class CEStatusEffectStackAlertSystem : EntitySystem
+public sealed partial class CEStatusEffectStackAlertSystem : EntitySystem
 {
     [Dependency] private AlertsSystem _alerts = default!;
 

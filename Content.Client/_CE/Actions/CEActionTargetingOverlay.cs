@@ -20,7 +20,7 @@ namespace Content.Client._CE.Actions;
 /// Draws spell targeting visuals: cast-radius circle, wide-line trajectory, cone, and AoE zone.
 /// All visuals are drawn below entities but above the grid.
 /// </summary>
-public sealed class CEActionTargetingOverlay : Overlay
+public sealed partial class CEActionTargetingOverlay : Overlay
 {
     public override OverlaySpace Space => OverlaySpace.WorldSpaceBelowEntities;
 

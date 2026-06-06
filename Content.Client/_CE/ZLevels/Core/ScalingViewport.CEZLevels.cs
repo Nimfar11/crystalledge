@@ -173,7 +173,7 @@ public sealed partial class ScalingViewport
         viewport.Eye = Eye;
     }
 
-    public sealed class ZEye(int lowest, int depth, int high) : Robust.Shared.Graphics.Eye
+    public sealed partial class ZEye(int lowest, int depth, int high) : Robust.Shared.Graphics.Eye
     {
         public int LowestDepth = lowest;
         public int Depth = depth;

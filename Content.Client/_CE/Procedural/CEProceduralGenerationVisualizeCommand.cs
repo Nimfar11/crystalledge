@@ -7,7 +7,7 @@ namespace Content.Client._CE.Procedural;
 /// Toggles the <see cref="CEProceduralGenerationOverlay"/> that visualizes
 /// the abstract room graph from <see cref="CEGeneratingProceduralDungeonComponent"/>.
 /// </summary>
-public sealed class CEProceduralGenerationVisualizeCommand : LocalizedCommands
+public sealed partial class CEProceduralGenerationVisualizeCommand : LocalizedCommands
 {
     [Dependency] private IOverlayManager _overlay = default!;
 

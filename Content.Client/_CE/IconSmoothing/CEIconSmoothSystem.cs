@@ -14,7 +14,7 @@ namespace Content.Client._CE.IconSmoothing;
 ///     Works like Corners mode but selects the RSI for each corner from the adjacent tile's
 ///     <see cref="ContentTileDefinition.IconSmoothSprite"/>.
 /// </summary>
-public sealed class CEIconSmoothSystem : EntitySystem
+public sealed partial class CEIconSmoothSystem : EntitySystem
 {
     [Dependency] private SharedMapSystem _mapSystem = default!;
     [Dependency] private SpriteSystem _sprite = default!;

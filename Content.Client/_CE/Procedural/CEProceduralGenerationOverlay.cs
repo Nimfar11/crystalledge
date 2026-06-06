@@ -11,7 +11,7 @@ namespace Content.Client._CE.Procedural;
 /// Debug overlay that visualizes <see cref="CEGeneratingProceduralDungeonComponent"/> data:
 /// draws coloured rectangles for each abstract room and lines for room connections.
 /// </summary>
-public sealed class CEProceduralGenerationOverlay : Overlay
+public sealed partial class CEProceduralGenerationOverlay : Overlay
 {
     [Dependency] private IEntityManager _entMan = default!;
     [Dependency] private IResourceCache _cache = default!;

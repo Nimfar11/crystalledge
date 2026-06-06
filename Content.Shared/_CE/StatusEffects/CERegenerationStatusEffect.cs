@@ -18,7 +18,7 @@ public sealed partial class CERegenerationStatusEffectComponent : Component
     public bool ScaleWithStacks = true;
 }
 
-public sealed class CERegenerationStatusEffectSystem : EntitySystem
+public sealed partial class CERegenerationStatusEffectSystem : EntitySystem
 {
     [Dependency] private CESharedDamageableSystem _damageable = default!;
     [Dependency] private CEStatusEffectStackSystem _stack = default!;

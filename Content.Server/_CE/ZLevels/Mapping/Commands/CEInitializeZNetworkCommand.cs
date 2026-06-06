@@ -12,7 +12,7 @@ using Robust.Shared.Console;
 namespace Content.Server._CE.ZLevels.Mapping.Commands;
 
 [AdminCommand(AdminFlags.Server | AdminFlags.Mapping)]
-public sealed class CEInitializeZNetworkCommand : LocalizedEntityCommands
+public sealed partial class CEInitializeZNetworkCommand : LocalizedEntityCommands
 {
     [Dependency] private IEntityManager _entities = default!;
     [Dependency] private CEZLevelsSystem _zLevels = default!;

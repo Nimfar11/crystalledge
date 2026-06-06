@@ -8,7 +8,7 @@ namespace Content.Client._CE.DPSMeter;
 /// <summary>
 /// Registers and unregisters the <see cref="CEDPSMeterOverlay"/> with the overlay manager.
 /// </summary>
-public sealed class CEDPSMeterOverlaySystem : EntitySystem
+public sealed partial class CEDPSMeterOverlaySystem : EntitySystem
 {
     [Dependency] private IOverlayManager _overlayMan = default!;
     [Dependency] private IResourceCache _cache = default!;

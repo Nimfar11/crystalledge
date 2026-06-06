@@ -12,7 +12,7 @@ namespace Content.Client._CE.Achievements;
 /// Achievement notification popup that slides in from bottom right, displays for 2 seconds, then slides out.
 /// Similar to Steam achievement notifications.
 /// </summary>
-public sealed class CEAchievementNotificationControl : Control
+public sealed partial class CEAchievementNotificationControl : Control
 {
     private const float SlideDuration = 0.5f; // Time to slide in/out
     private const float DisplayTime = 3.0f;   // Time to stay visible

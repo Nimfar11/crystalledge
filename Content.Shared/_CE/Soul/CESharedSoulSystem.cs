@@ -15,7 +15,7 @@ namespace Content.Shared._CE.Soul;
 /// with <see cref="CESoulReceiverComponent"/>.
 /// All write APIs clamp to <c>[0, MaxSouls]</c> and dirty the component when the value changes.
 /// </summary>
-public abstract class CESharedSoulSystem : EntitySystem
+public abstract partial class CESharedSoulSystem : EntitySystem
 {
     [Dependency] private SharedPopupSystem _popup = default!;
     [Dependency] private IGameTiming _timing = default!;

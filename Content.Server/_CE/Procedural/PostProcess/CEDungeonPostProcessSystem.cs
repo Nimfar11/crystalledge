@@ -4,7 +4,7 @@ using Content.Shared._CE.ZLevels.Core.Components;
 
 namespace Content.Server._CE.Procedural.PostProcess;
 
-public sealed class CEDungeonPostProcessSystem : EntitySystem
+public sealed partial class CEDungeonPostProcessSystem : EntitySystem
 {
     [Dependency] private CEZLevelsSystem _zLevels = default!;
 

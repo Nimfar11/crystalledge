@@ -21,7 +21,7 @@ namespace Content.Shared._CE.Health;
 /// For entities with <see cref="CEMobStateComponent"/>, the threshold is counted
 /// from the moment they enter Critical.
 /// </summary>
-public sealed class CEDestructibleSystem : EntitySystem
+public sealed partial class CEDestructibleSystem : EntitySystem
 {
     [Dependency] private SharedAudioSystem _audio = default!;
     [Dependency] private SharedContainerSystem _container = default!;

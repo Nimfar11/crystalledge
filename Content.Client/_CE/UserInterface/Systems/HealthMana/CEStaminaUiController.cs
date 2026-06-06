@@ -12,7 +12,7 @@ using Robust.Shared.Timing;
 namespace Content.Client._CE.UserInterface.Systems.HealthMana;
 
 [UsedImplicitly]
-public sealed class CEStaminaUiController : UIController, IOnStateEntered<GameplayState>, IOnStateExited<GameplayState>
+public sealed partial class CEStaminaUiController : UIController, IOnStateEntered<GameplayState>, IOnStateExited<GameplayState>
 {
     [Dependency] private IPlayerManager _player = default!;
 

@@ -5,7 +5,7 @@ using Robust.Client.Graphics;
 
 namespace Content.Client._CE.Mana;
 
-public sealed class CEShowMobManaSystem : EquipmentHudSystem<CEShowMobManaComponent>
+public sealed partial class CEShowMobManaSystem : EquipmentHudSystem<CEShowMobManaComponent>
 {
     [Dependency] private IOverlayManager _overlayMan = default!;
 

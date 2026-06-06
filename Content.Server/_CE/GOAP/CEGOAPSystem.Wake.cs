@@ -94,7 +94,7 @@ public sealed partial class CEGOAPSystem
 }
 
 
-public sealed class CECheckGOAPAwakeEvent : HandledEntityEventArgs
+public sealed partial class CECheckGOAPAwakeEvent : HandledEntityEventArgs
 {
     private bool _awake;
     public bool Awake => _awake;

@@ -17,7 +17,7 @@ namespace Content.Client._CE.Soul;
 /// component. A burst <c>CEEffectSoulCollect</c> is spawned at the player on
 /// startup, and one more is spawned at the receiver each time a particle arrives.
 /// </summary>
-public sealed class CEClientSoulTransferAnimationSystem : EntitySystem
+public sealed partial class CEClientSoulTransferAnimationSystem : EntitySystem
 {
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private IRobustRandom _random = default!;
@@ -45,7 +45,7 @@ public sealed class CEClientSoulTransferAnimationSystem : EntitySystem
 
     private readonly Dictionary<EntityUid, ParticleState> _states = new();
 
-    private sealed class ParticleData
+    private sealed partial class ParticleData
     {
         public EntityUid Entity;
         public Vector2 Direction;
@@ -54,7 +54,7 @@ public sealed class CEClientSoulTransferAnimationSystem : EntitySystem
         public bool Arrived;
     }
 
-    private sealed class ParticleState
+    private sealed partial class ParticleState
     {
         public Vector2 Origin;
         public Vector2 ReceiverPos;

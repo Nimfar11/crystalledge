@@ -9,7 +9,7 @@ using Robust.Shared.Prototypes;
 namespace Content.Server._CE.Skills.Commands;
 
 [AdminCommand(AdminFlags.Admin)]
-public sealed class CESkillAddCommand : LocalizedCommands
+public sealed partial class CESkillAddCommand : LocalizedCommands
 {
     [Dependency] private IEntityManager _entities = default!;
     [Dependency] private ISharedPlayerManager _players = default!;

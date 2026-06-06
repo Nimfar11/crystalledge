@@ -10,7 +10,7 @@ namespace Content.Server._CE.Teleportation;
 /// on each can teleport to the other) and the auto-link component is stripped from both
 /// so the pairing never re-runs.
 /// </summary>
-public sealed class CEPortalAutoLinkSystem : EntitySystem
+public sealed partial class CEPortalAutoLinkSystem : EntitySystem
 {
     [Dependency] private LinkedEntitySystem _link = default!;
 

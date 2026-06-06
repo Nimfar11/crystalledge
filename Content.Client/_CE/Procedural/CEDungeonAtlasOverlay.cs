@@ -12,7 +12,7 @@ namespace Content.Client._CE.Procedural;
 /// Draws rectangles showing the size and position of each <see cref="CEDungeonRoom3DPrototype"/>
 /// that uses the selected <see cref="CEZLevelMapPrototype"/> as its atlas source.
 /// </summary>
-public sealed class CEDungeonAtlasOverlay : Overlay
+public sealed partial class CEDungeonAtlasOverlay : Overlay
 {
     [Dependency] private IPrototypeManager _proto = default!;
     [Dependency] private IResourceCache _cache = default!;

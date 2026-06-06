@@ -6,7 +6,7 @@ using Robust.Shared.Player;
 
 namespace Content.Client._CE.Health;
 
-public sealed class CEDamageOverlaySystem : EntitySystem
+public sealed partial class CEDamageOverlaySystem : EntitySystem
 {
     [Dependency] private IOverlayManager _overlayManager = default!;
     [Dependency] private IPlayerManager _playerManager = default!;

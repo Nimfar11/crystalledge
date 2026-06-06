@@ -31,7 +31,7 @@ public sealed partial class CEGOAPRangeToTargetSensorComponent : Component
     public TimeSpan NextUpdateTime;
 }
 
-public sealed class CEGOAPRangeToTargetSensorSystem : EntitySystem
+public sealed partial class CEGOAPRangeToTargetSensorSystem : EntitySystem
 {
     [Dependency] private IGameTiming _timing = default!;
 

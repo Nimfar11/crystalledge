@@ -13,7 +13,7 @@ namespace Content.Server._CE.Music;
 /// <see cref="CEMapBossMusicComponent"/> on every map in that network so the soundtrack stays
 /// in sync no matter which z-level the local player is on.
 /// </summary>
-public sealed class CEBossMusicSystem : EntitySystem
+public sealed partial class CEBossMusicSystem : EntitySystem
 {
     [Dependency] private IMapManager _mapManager = default!;
     [Dependency] private CESharedZLevelsSystem _zLevels = default!;

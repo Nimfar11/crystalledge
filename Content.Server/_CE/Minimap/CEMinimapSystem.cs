@@ -12,7 +12,7 @@ namespace Content.Server._CE.Minimap;
 /// belongs to a z-level network we also scan its sibling maps so the minimap keeps working
 /// when the player is on a floor that does not directly carry the dungeon graph.
 /// </summary>
-public sealed class CEMinimapSystem : EntitySystem
+public sealed partial class CEMinimapSystem : EntitySystem
 {
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private CESharedZLevelsSystem _zLevels = default!;

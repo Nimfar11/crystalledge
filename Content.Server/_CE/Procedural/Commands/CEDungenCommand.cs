@@ -7,7 +7,7 @@ using Robust.Shared.Prototypes;
 namespace Content.Server._CE.Procedural.Commands;
 
 [AdminCommand(AdminFlags.Mapping)]
-public sealed class CEDungenCommand : LocalizedCommands
+public sealed partial class CEDungenCommand : LocalizedCommands
 {
     [Dependency] private IEntityManager _entities = default!;
     [Dependency] private IPrototypeManager _proto = default!;

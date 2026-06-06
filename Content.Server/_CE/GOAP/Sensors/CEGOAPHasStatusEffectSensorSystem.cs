@@ -27,7 +27,7 @@ public sealed partial class CEGOAPHasStatusEffectSensorComponent : Component
     public EntProtoId StatusEffect;
 }
 
-public sealed class CEGOAPHasStatusEffectSensorSystem : EntitySystem
+public sealed partial class CEGOAPHasStatusEffectSensorSystem : EntitySystem
 {
     [Dependency] private StatusEffectsSystem _statusEffect = default!;
 

@@ -7,7 +7,7 @@ using Robust.Shared.Serialization;
 
 namespace Content.Shared._CE.StatusEffects.Core;
 
-public abstract class CESharedStatusEffectVFXSystem : EntitySystem
+public abstract partial class CESharedStatusEffectVFXSystem : EntitySystem
 {
     [Dependency] private SharedAudioSystem _audio = default!;
     [Dependency] private CEStatusEffectStackSystem _stackSystem = default!;
@@ -68,7 +68,7 @@ public abstract class CESharedStatusEffectVFXSystem : EntitySystem
 /// The predicting player is excluded since they spawn VFX locally.
 /// </summary>
 [Serializable, NetSerializable]
-public sealed class CEStatusEffectVFXEvent(NetCoordinates coordinates, string? vfx) : EntityEventArgs
+public sealed partial class CEStatusEffectVFXEvent(NetCoordinates coordinates, string? vfx) : EntityEventArgs
 {
     public NetCoordinates Coordinates = coordinates;
     public string? Vfx = vfx;

@@ -13,7 +13,7 @@ using Content.Shared.Throwing;
 
 namespace Content.Shared._CE.StatusEffects.ActionBlocker;
 
-public sealed class CEActionBlockerStatusEffectSystem : EntitySystem
+public sealed partial class CEActionBlockerStatusEffectSystem : EntitySystem
 {
     [Dependency] private ActionBlockerSystem _actionBlocker = default!;
     [Dependency] private SharedCombatModeSystem _combat = default!;

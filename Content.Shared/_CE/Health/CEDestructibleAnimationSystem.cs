@@ -11,7 +11,7 @@ namespace Content.Shared._CE.Health;
 /// Intercepts <see cref="CEDestructAttemptEvent"/>, plays the configured animation,
 /// and only allows destruction once the animation completes.
 /// </summary>
-public sealed class CEDestructibleAnimationSystem : EntitySystem
+public sealed partial class CEDestructibleAnimationSystem : EntitySystem
 {
     [Dependency] private CESharedAnimationActionSystem _animation = default!;
     [Dependency] private CEDestructibleSystem _destructible = default!;

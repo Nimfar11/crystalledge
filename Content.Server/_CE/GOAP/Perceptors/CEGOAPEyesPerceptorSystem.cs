@@ -47,7 +47,7 @@ public sealed partial class CEGOAPEyesPerceptorComponent : Component
     public TimeSpan NextUpdateTime;
 }
 
-public sealed class CEGOAPEyesPerceptorSystem : EntitySystem
+public sealed partial class CEGOAPEyesPerceptorSystem : EntitySystem
 {
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private ITileDefinitionManager _tileDef = default!;

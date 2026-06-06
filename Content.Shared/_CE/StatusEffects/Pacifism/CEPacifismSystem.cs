@@ -21,7 +21,7 @@ namespace Content.Shared._CE.StatusEffects.Pacifism;
 /// Item use, attacks, throws and ability casts are NOT blocked any more — only the harmful
 /// PvP outcomes are. PvE damage, PvE debuffs and PvE mana drains are unaffected.
 /// </summary>
-public sealed class CEPacifismSystem : EntitySystem
+public sealed partial class CEPacifismSystem : EntitySystem
 {
     [Dependency] private IPrototypeManager _proto = default!;
     [Dependency] private IComponentFactory _compFactory = default!;

@@ -8,7 +8,7 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Server._CE.Metrics;
 
-public sealed class CEJobMetricsSystem : EntitySystem
+public sealed partial class CEJobMetricsSystem : EntitySystem
 {
     [Dependency] private IMetricsManager _metrics = default!;
     [Dependency] private IMeterFactory _meterFactory = default!;

@@ -9,7 +9,7 @@ namespace Content.Shared._CE.Speech;
 /// Shared bark speech base: syllable generation, pitch calculation, sentence parsing.
 /// Server and client systems inherit this to provide their own audio playback.
 /// </summary>
-public abstract class CESharedBarkSpeechSystem : EntitySystem
+public abstract partial class CESharedBarkSpeechSystem : EntitySystem
 {
     [Dependency] private IRobustRandom _random = default!;
 

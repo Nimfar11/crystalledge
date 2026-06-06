@@ -13,7 +13,7 @@ namespace Content.Client._CE.ScreenPopup;
 /// Full-screen cinematic popup control that fades in a title and description, holds for a moment, then signals
 /// the animation is complete. Queued and driven by <see cref="CEClientScreenPopupSystem"/>.
 /// </summary>
-public sealed class CEScreenPopupControl : Control
+public sealed partial class CEScreenPopupControl : Control
 {
     private const float FadeDuration = 4f;
     private const float HoldTime = 3f;

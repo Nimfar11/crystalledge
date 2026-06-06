@@ -4,7 +4,7 @@ using Content.Shared.Throwing;
 
 namespace Content.Shared._CE.ZLevels.Throwing;
 
-public sealed class CEZLevelThrowingSystem : EntitySystem
+public sealed partial class CEZLevelThrowingSystem : EntitySystem
 {
     [Dependency] private CESharedZLevelsSystem _zLevels = default!;
 

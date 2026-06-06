@@ -5,7 +5,7 @@ using Content.Shared.Effects;
 
 namespace Content.Server._CE.Health;
 
-public sealed class CEDamageableSystem : CESharedDamageableSystem
+public sealed partial class CEDamageableSystem : CESharedDamageableSystem
 {
     [Dependency] private SharedColorFlashEffectSystem _color = default!;
     [Dependency] private CEScreenshakeSystem _shake = default!;

@@ -5,7 +5,7 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Client._CE.FloorOcclusion;
 
-public sealed class CEFloorOcclusionSystem : CESharedFloorOcclusionSystem
+public sealed partial class CEFloorOcclusionSystem : CESharedFloorOcclusionSystem
 {
     private static readonly ProtoId<ShaderPrototype> HorizontalCut = "HorizontalCut";
 

@@ -12,7 +12,7 @@ namespace Content.Client._CE.EphemeralCollectable;
 /// is in <see cref="CEEphemeralCollectableComponent.CollectedBy"/>.
 /// The entity is not removed from the world — only hidden on this client.
 /// </summary>
-public sealed class CEEphemeralCollectableSystem : CESharedEphemeralCollectableSystem
+public sealed partial class CEEphemeralCollectableSystem : CESharedEphemeralCollectableSystem
 {
     [Dependency] private SpriteSystem _sprite = default!;
     [Dependency] private PointLightSystem _light = default!;

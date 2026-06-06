@@ -20,7 +20,7 @@ namespace Content.Client._CE.Health;
 /// - <c>ChangeDamage</c> (predicted melee — deduped to first prediction only), and
 /// - <c>HandleState</c> (server-only ranged/environmental — fires once when state diff is detected).
 /// </summary>
-public sealed class CEDamagePopupSystem : EntitySystem
+public sealed partial class CEDamagePopupSystem : EntitySystem
 {
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private IOverlayManager _overlayMan = default!;

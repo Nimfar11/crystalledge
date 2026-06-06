@@ -6,7 +6,7 @@ using Robust.Client.UserInterface;
 
 namespace Content.Client._CE.IdentityRecognition;
 
-public sealed class CEIdentityRecognitionBoundUserInterface : BoundUserInterface
+public sealed partial class CEIdentityRecognitionBoundUserInterface : BoundUserInterface
 {
     [Dependency] private IEntityManager _entManager = default!;
     [Dependency] private IPlayerManager _player = default!;

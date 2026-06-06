@@ -17,7 +17,7 @@ namespace Content.Server._CE.Procedural.Overview;
 /// <see cref="CEPlayerDungeonOverviewUiKey.Key"/>. Unlike the admin version this
 /// only exposes per-level player counts — never names or entities.
 /// </summary>
-public sealed class CEPlayerDungeonOverviewSystem : EntitySystem
+public sealed partial class CEPlayerDungeonOverviewSystem : EntitySystem
 {
     [Dependency] private IPrototypeManager _proto = default!;
     [Dependency] private UserInterfaceSystem _ui = default!;

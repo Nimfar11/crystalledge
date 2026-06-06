@@ -8,7 +8,7 @@ using Content.Shared._CE.TileEffects.Core;
 
 namespace Content.Shared._CE.ZLevels.Damage.FallingDamage;
 
-public sealed class CEFallingDamageSystem : EntitySystem
+public sealed partial class CEFallingDamageSystem : EntitySystem
 {
     [Dependency] private CESharedDamageableSystem _damageable = default!;
     public override void Initialize()

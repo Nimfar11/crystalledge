@@ -136,7 +136,7 @@ public sealed partial class CEEntityTargetActionAnimationEvent : EntityTargetAct
 /// An event that checks all sorts of conditions, and calculates the total cost of casting a spell. Called before the spell is cast.
 /// </summary>
 /// <remarks>TODO: This call is duplicated at the beginning of the cast for checks, and at the end of the cast for mana subtraction.</remarks>
-public sealed class CECalculateManacostEvent(EntityUid? performer, int initialManacost) : EntityEventArgs, IInventoryRelayEvent
+public sealed partial class CECalculateManacostEvent(EntityUid? performer, int initialManacost) : EntityEventArgs, IInventoryRelayEvent
 {
     public EntityUid? Performer = performer;
     public int Manacost = initialManacost;

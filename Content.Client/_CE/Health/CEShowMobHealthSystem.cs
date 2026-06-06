@@ -5,7 +5,7 @@ using Robust.Client.Graphics;
 
 namespace Content.Client._CE.Health;
 
-public sealed class CEShowMobHealthSystem : EquipmentHudSystem<CEShowMobHealthComponent>
+public sealed partial class CEShowMobHealthSystem : EquipmentHudSystem<CEShowMobHealthComponent>
 {
     [Dependency] private IOverlayManager _overlayMan = default!;
 

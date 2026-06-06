@@ -12,7 +12,7 @@ using Robust.Shared.Serialization;
 
 namespace Content.Shared._CE.StatusEffects.Core;
 
-public sealed class CEStatusEffectStackSystem : EntitySystem
+public sealed partial class CEStatusEffectStackSystem : EntitySystem
 {
     [Dependency] private StatusEffectsSystem _statusEffect = default!;
     [Dependency] private AlertsSystem _alerts = default!;
@@ -494,7 +494,7 @@ public enum CEStatusEffectStackPowerVisuals
 /// Cancelling prevents the stacks from being applied.
 /// Relayed to the source's active status effects via <c>StatusEffectRelayedEvent</c>.
 /// </summary>
-public sealed class CEAttemptApplyStatusEffectStackEvent(
+public sealed partial class CEAttemptApplyStatusEffectStackEvent(
     EntityUid target,
     EntProtoId statusEffect,
     int amount) : EntityEventArgs
@@ -510,7 +510,7 @@ public sealed class CEAttemptApplyStatusEffectStackEvent(
 /// Cancelling prevents the stacks from being applied.
 /// Relayed to the target's active status effects via <c>StatusEffectRelayedEvent</c>.
 /// </summary>
-public sealed class CEAttemptReceiveStatusEffectStackEvent(
+public sealed partial class CEAttemptReceiveStatusEffectStackEvent(
     EntityUid target,
     EntProtoId statusEffect,
     int amount,

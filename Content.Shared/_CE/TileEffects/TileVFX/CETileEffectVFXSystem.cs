@@ -7,7 +7,7 @@ using Robust.Shared.Timing;
 
 namespace Content.Shared._CE.TileEffects.TileVFX;
 
-public sealed class CETileEffectVFXSystem : EntitySystem
+public sealed partial class CETileEffectVFXSystem : EntitySystem
 {
     [Dependency] private SharedAudioSystem _audio = default!;
     [Dependency] private INetManager _net = default!;

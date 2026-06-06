@@ -17,7 +17,7 @@ namespace Content.Client._CE.Water;
 /// Overlay responsible for rendering tile distortion shader on tiles
 /// with an anchored <see cref="CETileDistortionComponent"/> entity.
 /// </summary>
-public sealed class CETileDistortionOverlay : Overlay
+public sealed partial class CETileDistortionOverlay : Overlay
 {
     public override bool RequestScreenTexture { get; set; } = true;
     public override OverlaySpace Space => OverlaySpace.WorldSpace;
@@ -177,7 +177,7 @@ public sealed class CETileDistortionOverlay : Overlay
         base.DisposeBehavior();
     }
 
-    internal sealed class CachedResources : IDisposable
+    internal sealed partial class CachedResources : IDisposable
     {
         public IRenderTexture? WaterTarget;
 

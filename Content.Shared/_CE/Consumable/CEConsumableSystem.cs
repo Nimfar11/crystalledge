@@ -11,7 +11,7 @@ using Robust.Shared.Serialization;
 
 namespace Content.Shared._CE.Consumable;
 
-public sealed class CEConsumableSystem : EntitySystem
+public sealed partial class CEConsumableSystem : EntitySystem
 {
     [Dependency] private SharedDoAfterSystem _doAfter = default!;
     [Dependency] private SharedAudioSystem _audio = default!;

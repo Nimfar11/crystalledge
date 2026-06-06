@@ -8,7 +8,7 @@ namespace Content.Shared._CE.Audio.Systems;
 /// <summary>
 /// System that plays sounds when stacks are merged together.
 /// </summary>
-public sealed class CEEmitSoundOnStackMergeSystem : EntitySystem
+public sealed partial class CEEmitSoundOnStackMergeSystem : EntitySystem
 {
     [Dependency] private SharedAudioSystem _audio = default!;
     [Dependency] private INetManager _net = default!;

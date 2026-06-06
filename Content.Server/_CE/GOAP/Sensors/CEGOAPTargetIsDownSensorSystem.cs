@@ -19,7 +19,7 @@ public sealed partial class CEGOAPTargetIsDownSensorComponent : Component
     public CEGOAPTargetSelector Selector = default!;
 }
 
-public sealed class CEGOAPTargetIsDownSensorSystem : EntitySystem
+public sealed partial class CEGOAPTargetIsDownSensorSystem : EntitySystem
 {
     [Dependency] private CEMobStateSystem _mobState = default!;
 

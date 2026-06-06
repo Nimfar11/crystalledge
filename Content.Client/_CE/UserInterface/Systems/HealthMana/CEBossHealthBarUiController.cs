@@ -13,7 +13,7 @@ using Robust.Shared.Timing;
 namespace Content.Client._CE.UserInterface.Systems.HealthMana;
 
 [UsedImplicitly]
-public sealed class CEBossHealthBarUiController : UIController, IOnStateEntered<GameplayState>, IOnStateExited<GameplayState>
+public sealed partial class CEBossHealthBarUiController : UIController, IOnStateEntered<GameplayState>, IOnStateExited<GameplayState>
 {
     [Dependency] private IPlayerManager _player = default!;
 

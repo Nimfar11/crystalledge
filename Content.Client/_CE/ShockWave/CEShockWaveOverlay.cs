@@ -8,7 +8,7 @@ using Robust.Shared.Timing;
 
 namespace Content.Client._CE.ShockWave;
 
-public sealed class CEShockWaveOverlay : Overlay
+public sealed partial class CEShockWaveOverlay : Overlay
 {
     [Dependency] private IPrototypeManager _prototypeManager = default!;
     [Dependency] private IGameTiming _timing = default!;

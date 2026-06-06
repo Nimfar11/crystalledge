@@ -68,7 +68,7 @@ public sealed partial class CEGOAPAlarmSystem : EntitySystem
 /// <summary>
 /// An event broadcast to alert GOAP agents within a radius
 /// </summary>
-public sealed class CEGOAPAlarmEvent(EntityCoordinates source, EntityUid target, float radius) : EntityEventArgs
+public sealed partial class CEGOAPAlarmEvent(EntityCoordinates source, EntityUid target, float radius) : EntityEventArgs
 {
     public EntityCoordinates Source = source;
     public EntityUid Target = target;

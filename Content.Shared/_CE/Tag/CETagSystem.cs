@@ -3,7 +3,7 @@ using Robust.Shared.Utility;
 
 namespace Content.Shared._CE.Tag;
 
-public sealed class CETagSystem : EntitySystem
+public sealed partial class CETagSystem : EntitySystem
 {
     [Dependency] private IPrototypeManager _proto = default!;
 

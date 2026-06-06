@@ -9,7 +9,7 @@ namespace Content.Client._CE.Water;
 /// If the entity is placed on an <see cref="ItemPlacerComponent"/> surface,
 /// raises its DrawDepth above the surface entity instead.
 /// </summary>
-public sealed class CEPlaceableDrawDepthSystem : EntitySystem
+public sealed partial class CEPlaceableDrawDepthSystem : EntitySystem
 {
     [Dependency] private SpriteSystem _sprite = default!;
 

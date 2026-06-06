@@ -27,7 +27,7 @@ public sealed partial class WeaponArcAttack : CEEntityEffectBase<WeaponArcAttack
 /// <summary>
 /// Local event raised when an ArcAttack fires, used for debug visualization.
 /// </summary>
-public sealed class CEDebugArcAttackEvent(MapCoordinates position, Angle direction, float range, float arcWidth)
+public sealed partial class CEDebugArcAttackEvent(MapCoordinates position, Angle direction, float range, float arcWidth)
     : EntityEventArgs
 {
     public MapCoordinates Position = position;

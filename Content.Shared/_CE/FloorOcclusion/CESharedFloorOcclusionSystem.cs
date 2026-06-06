@@ -6,7 +6,7 @@ using Robust.Shared.Physics.Systems;
 
 namespace Content.Shared._CE.FloorOcclusion;
 
-public abstract class CESharedFloorOcclusionSystem : EntitySystem
+public abstract partial class CESharedFloorOcclusionSystem : EntitySystem
 {
     [Dependency] private SharedPhysicsSystem _physics = default!;
 

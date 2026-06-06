@@ -3,7 +3,7 @@ using Content.Shared.Throwing;
 
 namespace Content.Shared._CE.Throwing;
 
-public sealed class CEStaminaThrowableSystem : EntitySystem
+public sealed partial class CEStaminaThrowableSystem : EntitySystem
 {
     [Dependency] private CEStaminaSystem _stamina = default!;
 

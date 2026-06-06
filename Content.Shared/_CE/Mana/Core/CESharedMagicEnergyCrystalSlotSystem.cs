@@ -7,7 +7,7 @@ using Robust.Shared.Containers;
 
 namespace Content.Shared._CE.Mana.Core;
 
-public abstract class CESharedMagicEnergyCrystalSlotSystem : EntitySystem
+public abstract partial class CESharedMagicEnergyCrystalSlotSystem : EntitySystem
 {
     [Dependency] private SharedAppearanceSystem _appearance = default!;
     [Dependency] private ItemSlotsSystem _itemSlots = default!;

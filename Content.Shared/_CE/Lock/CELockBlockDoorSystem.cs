@@ -12,7 +12,7 @@ namespace Content.Shared._CE.Lock;
 /// same behaviour to doors (and any other entity that raises <see cref="BeforeDoorOpenedEvent"/>).
 /// Also shows a "locked" popup and plays the doorknob sound when opening is blocked.
 /// </summary>
-public sealed class CELockBlockDoorSystem : EntitySystem
+public sealed partial class CELockBlockDoorSystem : EntitySystem
 {
     [Dependency] private SharedPopupSystem _popup = default!;
     [Dependency] private SharedAudioSystem _audio = default!;

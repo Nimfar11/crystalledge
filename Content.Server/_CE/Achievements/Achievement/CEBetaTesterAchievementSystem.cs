@@ -6,7 +6,7 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Server._CE.Achievements.Achievement;
 
-public sealed class CEBetaTesterAchievementSystem : EntitySystem
+public sealed partial class CEBetaTesterAchievementSystem : EntitySystem
 {
     [Dependency] private CEAchievementsSystem _achievement = default!;
     [Dependency] private IConfigurationManager _cfg = default!;

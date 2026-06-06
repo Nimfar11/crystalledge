@@ -8,7 +8,7 @@ using Robust.Shared.Player;
 
 namespace Content.Server._CE.KnowledgeBook;
 
-public sealed class CEKnowledgeBookSystem : CESharedKnowledgeBookSystem
+public sealed partial class CEKnowledgeBookSystem : CESharedKnowledgeBookSystem
 {
     [Dependency] private CERecipeKnowledgeSystem _recipeKnowledge = default!;
     [Dependency] private PopupSystem _popup = default!;

@@ -8,7 +8,7 @@ using Robust.Shared.Audio.Systems;
 
 namespace Content.Shared._CE.Tools;
 
-public sealed class CELanternSystem : EntitySystem
+public sealed partial class CELanternSystem : EntitySystem
 {
     [Dependency] private SharedAudioSystem _audio = default!;
     [Dependency] private SharedAppearanceSystem _appearance = default!;

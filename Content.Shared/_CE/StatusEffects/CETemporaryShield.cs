@@ -38,7 +38,7 @@ public sealed partial class CETempShieldStatusEffectComponent : Component
 }
 
 
-public sealed class CETempShieldSystem : EntitySystem
+public sealed partial class CETempShieldSystem : EntitySystem
 {
     [Dependency] private CEStatusEffectStackSystem _stacks = default!;
 

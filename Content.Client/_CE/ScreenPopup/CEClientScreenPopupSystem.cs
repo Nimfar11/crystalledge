@@ -10,7 +10,7 @@ namespace Content.Client._CE.ScreenPopup;
 /// Listens for <see cref="CEScreenPopupShowEvent"/> network events and drives the
 /// <see cref="CEScreenPopupControl"/> queue, playing popups one at a time.
 /// </summary>
-public sealed class CEClientScreenPopupSystem : EntitySystem
+public sealed partial class CEClientScreenPopupSystem : EntitySystem
 {
     [Dependency] private AudioSystem _audio = default!;
     [Dependency] private IUserInterfaceManager _userInterface = default!;

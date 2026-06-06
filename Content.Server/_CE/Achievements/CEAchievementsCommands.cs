@@ -10,7 +10,7 @@ using Robust.Shared.Prototypes;
 namespace Content.Server._CE.Achievements;
 
 [AdminCommand(AdminFlags.Host)]
-public sealed class CEAddAchievementCommand : LocalizedCommands
+public sealed partial class CEAddAchievementCommand : LocalizedCommands
 {
     [Dependency] private IPlayerManager _player = default!;
     [Dependency] private IPrototypeManager _proto = default!;
@@ -83,7 +83,7 @@ public sealed class CEAddAchievementCommand : LocalizedCommands
 }
 
 [AdminCommand(AdminFlags.Host)]
-public sealed class CERemoveAchievementCommand : LocalizedCommands
+public sealed partial class CERemoveAchievementCommand : LocalizedCommands
 {
     [Dependency] private IPlayerManager _player = default!;
     [Dependency] private IPrototypeManager _proto = default!;
@@ -153,7 +153,7 @@ public sealed class CERemoveAchievementCommand : LocalizedCommands
 }
 
 [AdminCommand(AdminFlags.Debug)]
-public sealed class CEListAchievementsCommand : LocalizedCommands
+public sealed partial class CEListAchievementsCommand : LocalizedCommands
 {
     [Dependency] private IServerDbManager _db = default!;
     [Dependency] private IPlayerLocator _locator = default!;
@@ -213,7 +213,7 @@ public sealed class CEListAchievementsCommand : LocalizedCommands
 }
 
 [AdminCommand(AdminFlags.Admin)]
-public sealed class CEAddAchievementInspirationCommand : LocalizedCommands
+public sealed partial class CEAddAchievementInspirationCommand : LocalizedCommands
 {
     [Dependency] private IPlayerManager _player = default!;
     [Dependency] private IEntityManager _entMan = default!;

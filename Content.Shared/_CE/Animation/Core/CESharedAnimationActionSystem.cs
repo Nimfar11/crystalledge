@@ -310,7 +310,7 @@ public abstract partial class CESharedAnimationActionSystem : EntitySystem
 /// </summary>
 /// <param name="animation"></param>
 /// <param name="cancelled"></param>
-public sealed class CEAnimationActionEndedEvent(ProtoId<CEEntityEffectAnimationPrototype> animation, bool cancelled)
+public sealed partial class CEAnimationActionEndedEvent(ProtoId<CEEntityEffectAnimationPrototype> animation, bool cancelled)
     : EntityEventArgs
 {
     public ProtoId<CEEntityEffectAnimationPrototype> Animation = animation;
@@ -321,7 +321,7 @@ public sealed class CEAnimationActionEndedEvent(ProtoId<CEEntityEffectAnimationP
 /// TODO
 /// </summary>
 /// <param name="animation"></param>
-public sealed class CEAnimationActionStartedEvent(ProtoId<CEEntityEffectAnimationPrototype> animation) : EntityEventArgs
+public sealed partial class CEAnimationActionStartedEvent(ProtoId<CEEntityEffectAnimationPrototype> animation) : EntityEventArgs
 {
     public ProtoId<CEEntityEffectAnimationPrototype> Animation = animation;
 }

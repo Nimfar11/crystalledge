@@ -11,7 +11,7 @@ namespace Content.Shared._CE.DPSMeter;
 /// and resets the session after TrackTimeAfterHit + FadeDuration of silence.
 /// Runs on both server and client; server state is authoritative via AutoGenerateComponentState.
 /// </summary>
-public sealed class CEDPSMeterSystem : EntitySystem
+public sealed partial class CEDPSMeterSystem : EntitySystem
 {
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private INetManager _netMan = default!;

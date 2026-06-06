@@ -15,7 +15,7 @@ public sealed partial class CEGOAPEarsPerceptorComponent : Component
 {
 }
 
-public sealed class CEGOAPEarsPerceptorSystem : EntitySystem
+public sealed partial class CEGOAPEarsPerceptorSystem : EntitySystem
 {
     [Dependency] private CEGOAPSystem _goap = default!;
     [Dependency] private SharedTransformSystem _transform = default!;

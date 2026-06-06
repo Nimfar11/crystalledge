@@ -5,7 +5,7 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Server._CE.Achievements;
 
-public sealed class CEAchievementsRequirementManager : ICEAchievementsRequirementManager
+public sealed partial class CEAchievementsRequirementManager : ICEAchievementsRequirementManager
 {
     [Dependency] private IEntityManager _entityManager = default!;
 

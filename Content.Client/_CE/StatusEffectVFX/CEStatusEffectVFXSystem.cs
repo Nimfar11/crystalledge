@@ -5,7 +5,7 @@ using Robust.Shared.Timing;
 
 namespace Content.Client._CE.StatusEffectVFX;
 
-public sealed class CEStatusEffectVFXSystem : CESharedStatusEffectVFXSystem
+public sealed partial class CEStatusEffectVFXSystem : CESharedStatusEffectVFXSystem
 {
     [Dependency] private IGameTiming _timing = default!;
 

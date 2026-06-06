@@ -11,7 +11,7 @@ namespace Content.Server._CE.GOAP.Classifiers;
 /// on classified enemies and raises <see cref="CEGOAPEnemyAcquiredEvent"/> when an agent
 /// transitions from having no known enemies to having at least one.
 /// </summary>
-public sealed class CEGOAPKnowledgeCacheSystem : EntitySystem
+public sealed partial class CEGOAPKnowledgeCacheSystem : EntitySystem
 {
     [Dependency] private NpcFactionSystem _faction = default!;
 

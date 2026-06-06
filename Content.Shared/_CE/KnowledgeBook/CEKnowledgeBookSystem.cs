@@ -13,7 +13,7 @@ using Robust.Shared.Timing;
 
 namespace Content.Shared._CE.KnowledgeBook;
 
-public abstract class CESharedKnowledgeBookSystem : EntitySystem
+public abstract partial class CESharedKnowledgeBookSystem : EntitySystem
 {
     [Dependency] private SharedDoAfterSystem _doAfter = default!;
     [Dependency] private SharedAudioSystem _audio = default!;

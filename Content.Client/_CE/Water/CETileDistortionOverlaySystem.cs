@@ -5,7 +5,7 @@ namespace Content.Client._CE.Water;
 /// <summary>
 /// System responsible for rendering tile distortion using <see cref="CETileDistortionOverlay"/>.
 /// </summary>
-public sealed class CETileDistortionOverlaySystem : EntitySystem
+public sealed partial class CETileDistortionOverlaySystem : EntitySystem
 {
     [Dependency] private IOverlayManager _overlayMan = default!;
 

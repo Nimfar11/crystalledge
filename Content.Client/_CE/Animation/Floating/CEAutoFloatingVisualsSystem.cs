@@ -11,7 +11,7 @@ namespace Content.Client._CE.Animation.Floating;
 /// <see cref="CEAutoFloatingVisualsComponent"/>.
 /// Each entity gets a random phase offset on startup so groups of entities bob out of sync.
 /// </summary>
-public sealed class CEAutoFloatingVisualsSystem : EntitySystem
+public sealed partial class CEAutoFloatingVisualsSystem : EntitySystem
 {
     [Dependency] private IRobustRandom _random = default!;
     [Dependency] private IGameTiming _timing = default!;

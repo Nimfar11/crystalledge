@@ -16,7 +16,7 @@ using Robust.Shared.Timing;
 
 namespace Content.Shared._CE.StatusEffects.EffectsOnTriggerStatusEffects;
 
-public sealed class CEEffectsOnTriggerStatusEffectSystem : EntitySystem
+public sealed partial class CEEffectsOnTriggerStatusEffectSystem : EntitySystem
 {
     [Dependency] private EntityWhitelistSystem _whitelist = default!;
     [Dependency] private CEStatusEffectStackSystem _stack = default!;

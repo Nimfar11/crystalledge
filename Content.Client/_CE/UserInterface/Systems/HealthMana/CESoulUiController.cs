@@ -11,7 +11,7 @@ using Robust.Shared.Timing;
 namespace Content.Client._CE.UserInterface.Systems.HealthMana;
 
 [UsedImplicitly]
-public sealed class CESoulUiController : UIController
+public sealed partial class CESoulUiController : UIController
 {
     [Dependency] private IPlayerManager _player = default!;
 

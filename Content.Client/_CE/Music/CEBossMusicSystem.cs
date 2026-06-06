@@ -18,7 +18,7 @@ namespace Content.Client._CE.Music;
 ///   Battle  — plays the intro one-shot, then starts the main loop after <see cref="CEBossMusicPrototype.MainStartDelay"/>
 ///   Victory — stops the main loop immediately and plays the victory one-shot
 /// </summary>
-public sealed class CEBossMusicSystem : EntitySystem
+public sealed partial class CEBossMusicSystem : EntitySystem
 {
     [Dependency] private IConfigurationManager _cfg = default!;
     [Dependency] private IGameTiming _timing = default!;

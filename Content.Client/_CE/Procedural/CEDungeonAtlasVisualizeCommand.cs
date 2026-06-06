@@ -9,7 +9,7 @@ namespace Content.Client._CE.Procedural;
 /// Toggles the <see cref="CEDungeonAtlasOverlay"/> that visualizes <see cref="CEDungeonRoom3DPrototype"/>
 /// rects for a given <see cref="CEZLevelMapPrototype"/>.
 /// </summary>
-public sealed class CEDungeonAtlasVisualizeCommand : LocalizedCommands
+public sealed partial class CEDungeonAtlasVisualizeCommand : LocalizedCommands
 {
     [Dependency] private IOverlayManager _overlay = default!;
     [Dependency] private IPrototypeManager _proto = default!;

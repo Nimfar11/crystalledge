@@ -68,7 +68,7 @@ public sealed partial class CEClientZLevelsSystem : CESharedZLevelsSystem
 /// This prevents Z from accumulating across frames when no animation writes to the offset
 /// (e.g. entities that only animate scale, like SlimeIceBig).
 /// </summary>
-internal sealed class CEClientZLevelsPreAnimSystem : EntitySystem
+internal sealed partial class CEClientZLevelsPreAnimSystem : EntitySystem
 {
     [Dependency] private SpriteSystem _sprite = default!;
     [Dependency] private EntityQuery<MapGridComponent> _mapGridQuery = default!;
@@ -114,7 +114,7 @@ internal sealed class CEClientZLevelsPreAnimSystem : EntitySystem
 /// (loop animation, one-shot swing, idle bob, etc.) is preserved, and the Z-height contribution
 /// is simply added on top.  No animation code needs to know about Z levels.
 /// </summary>
-internal sealed class CEClientZLevelsPostAnimSystem : EntitySystem
+internal sealed partial class CEClientZLevelsPostAnimSystem : EntitySystem
 {
     [Dependency] private SpriteSystem _sprite = default!;
     [Dependency] private SharedTransformSystem _xform = default!;

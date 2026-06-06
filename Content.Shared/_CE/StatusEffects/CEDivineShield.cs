@@ -11,7 +11,7 @@ public sealed partial class CEDivineShieldStatusEffectComponent : Component
 {
 }
 
-public sealed class CEDivineShieldSystem : EntitySystem
+public sealed partial class CEDivineShieldSystem : EntitySystem
 {
     [Dependency] private CEStatusEffectStackSystem _status = default!;
 
@@ -47,7 +47,7 @@ public sealed class CEDivineShieldSystem : EntitySystem
 /// It is also propagated via Relay to all status effects on both entities.
 /// Use this to apply special effects when the shield breaks.
 /// </summary>
-public sealed class CEDivineShieldBrokenEvent(EntityUid shieldHolder, EntityUid? applier, int damageConsumed, bool raisedOnApplier) : EntityEventArgs
+public sealed partial class CEDivineShieldBrokenEvent(EntityUid shieldHolder, EntityUid? applier, int damageConsumed, bool raisedOnApplier) : EntityEventArgs
 {
     public EntityUid ShieldHolder = shieldHolder;
     public EntityUid? Applier = applier;

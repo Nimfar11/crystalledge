@@ -241,7 +241,7 @@ public sealed partial class CEMobStateSystem : EntitySystem
 /// <summary>
 /// Raised on entity with CEMobStateComponent, when it state changes to critical or back
 /// </summary>
-public sealed class CEMobStateChangedEvent(EntityUid target, bool critical)
+public sealed partial class CEMobStateChangedEvent(EntityUid target, bool critical)
     : EntityEventArgs
 {
     public readonly EntityUid Target = target;

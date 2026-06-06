@@ -12,7 +12,7 @@ namespace Content.Client._CE.Achievements;
 /// Client-side manager that receives and caches achievement data from the server.
 /// Registered early in IoC so the net message is known before the connection is established.
 /// </summary>
-public sealed class CEAchievementsManager : ICEAchievementsRequirementManager
+public sealed partial class CEAchievementsManager : ICEAchievementsRequirementManager
 {
     [Dependency] private IClientNetManager _netManager = default!;
     [Dependency] private IBaseClient _client = default!;

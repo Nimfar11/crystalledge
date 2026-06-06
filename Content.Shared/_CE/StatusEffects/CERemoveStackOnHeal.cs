@@ -22,7 +22,7 @@ public sealed partial class CERemoveStackOnHealComponent : Component
     public bool CanRemoveStatusEffect = true;
 }
 
-public sealed class CERemoveStackOnHealSystem : EntitySystem
+public sealed partial class CERemoveStackOnHealSystem : EntitySystem
 {
     [Dependency] private CEStatusEffectStackSystem _stack = default!;
 
