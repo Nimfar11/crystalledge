@@ -16,7 +16,7 @@ public abstract class CESharedBlinkingSystem : EntitySystem
 {
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private IRobustRandom _random = default!;
-    [Dependency] protected readonly SharedAppearanceSystem Appearance = default!;
+    [Dependency] protected SharedAppearanceSystem Appearance = default!;
 
     /// <inheritdoc/>
     public override void Initialize()

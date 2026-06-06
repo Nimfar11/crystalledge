@@ -14,7 +14,7 @@ namespace Content.Shared._CE.Actions;
 
 public abstract partial class CESharedActionSystem : EntitySystem
 {
-    [Dependency] protected readonly SharedPopupSystem Popup = default!;
+    [Dependency] protected SharedPopupSystem Popup = default!;
     [Dependency] private CESharedAnimationActionSystem _animation = default!;
     [Dependency] private SharedTransformSystem _transform = default!;
     [Dependency] private SharedHandsSystem _hand = default!;
