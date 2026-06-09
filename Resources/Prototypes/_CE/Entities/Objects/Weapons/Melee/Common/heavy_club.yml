@@ -1,4 +1,4 @@
-- type: entity
+﻿- type: entity
   parent: CEBaseWeapon
   id: CEWeaponHeavyClub
   name: heavy club
@@ -8,10 +8,10 @@
     sprite: _CE/Objects/Weapons/heavy_club.rsi
     state: icon
   - type: CEWeapon
+    range: 0.6
     effectSlots:
       OnHit:
       - !type:WeaponArcAttack
-        range: 0.6
         arcWidth: 60
         effects:
         - !type:Damage
@@ -19,12 +19,11 @@
           damage:
             types:
               Physical: 18
-        - !type:ThrowFromUser
+        - !type:ThrowFrom
           throwPower: 10
           distance: 1
       OnHeavyHit:
       - !type:WeaponArcAttack
-        range: 0.6
         arcWidth: 180
         effects:
         - !type:Damage
