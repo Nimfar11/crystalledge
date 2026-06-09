@@ -645,3 +645,12 @@
   id: 10055
   time: '2026-06-07T11:48:59.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystalledge/pull/290
+- author: TheShuEd
+  changes:
+  - message: 'Scimitars now support dual-wielding: Right-clicking to attack while
+      holding a scimitar in each hand now triggers a special attack pattern that uses
+      both weapons.'
+    type: Add
+  id: 10056
+  time: '2026-06-09T22:48:22.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystalledge/pull/297
