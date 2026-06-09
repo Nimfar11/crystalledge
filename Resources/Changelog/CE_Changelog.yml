@@ -614,3 +614,34 @@
   id: 10052
   time: '2026-06-04T21:23:21.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystalledge/pull/285
+- author: TheShuEd
+  changes:
+  - message: "The \u201CMageslayer\u201D ability has been reworked\u2014the bonus\
+      \ damage has been reduced from 10 to 5, but the ability now grants a passive\
+      \ effect that steals 5 mana on every attack"
+    type: Tweak
+  - message: Fixed a bug that caused friendly rats to attack mobs
+    type: Fix
+  id: 10053
+  time: '2026-06-09T21:32:51.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystalledge/pull/296
+- author: TheShuEd
+  changes:
+  - message: Falling into water no longer causes damage, but it does create a water
+      splash where you land.
+    type: Add
+  - message: Lava now also deals high damage on contact, rather than just applying
+      burn status effects.
+    type: Tweak
+  id: 10054
+  time: '2026-06-09T15:05:26.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystalledge/pull/295
+- author: TheShuEd
+  changes:
+  - message: Fixed falling damage one-shots
+    type: Fix
+  - message: Slimes now has falling damage immunity
+    type: Fix
+  id: 10055
+  time: '2026-06-07T11:48:59.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystalledge/pull/290
