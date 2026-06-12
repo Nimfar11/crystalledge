@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+using Content.Shared._CE.Loot;
 using Content.Shared._CE.Tag;
 using Content.Shared._CE.Trading.Components;
 using Content.Shared.Hands.EntitySystems;
@@ -28,27 +28,15 @@ public sealed partial class CETradingSpawnFromCategoryOffer : CETradingOffer
         return spawned;
     }
 
-    public override void UpdateSlotVisuals(EntityUid slotEntity, IEntityManager entMan, IPrototypeManager proto, IRobustRandom random)
+    public override void UpdateSlotVisuals(EntityUid slotEntity,
+        IEntityManager entMan,
+        IPrototypeManager proto,
+        IRobustRandom random)
     {
-        var pool = new List<EntProtoId>();
-        foreach (var entProto in proto.EnumeratePrototypes<EntityPrototype>())
-        {
-            if (entProto.Abstract)
-                continue;
-            if (!entProto.Components.TryGetValue("CETradingCategory", out var entry))
-                continue;
-            if (entry.Component is not CETradingCategoryComponent cat)
-                continue;
-            if (!cat.Tags.Overlaps(Tags))
-                continue;
-            pool.Add(new EntProtoId(entProto.ID));
-        }
+        SelectedEntity = entMan.System<CELootSystem>().PickRandom(Tags, random);
 
-        if (pool.Count == 0)
+        if (SelectedEntity == null)
             return;
-
-        SelectedEntity = random.Pick(pool);
-
         if (!proto.TryIndex<EntityPrototype>(SelectedEntity.Value, out var selected))
             return;
 
