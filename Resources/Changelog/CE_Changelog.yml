@@ -699,3 +699,16 @@
   id: 10061
   time: '2026-06-12T16:15:24.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystalledge/pull/303
+- author: TheShuEd
+  changes:
+  - message: Added merchant rooms into dungeon
+    type: Add
+  - message: Removed libraries rooms
+    type: Remove
+  - message: Bookshelf with alchemy books added into aclhemy rooms randomly
+    type: Tweak
+  - message: 'Strong pacifism into safezones added: Blocks using any actions'
+    type: Tweak
+  id: 10062
+  time: '2026-06-12T21:50:12.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystalledge/pull/304
